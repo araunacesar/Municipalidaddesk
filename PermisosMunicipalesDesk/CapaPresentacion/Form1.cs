@@ -35,7 +35,7 @@ namespace CapaPresentacion
             OracleConnection OC = Conn.AbrirConexion();
 
        
-            if (txtuser.Text == "admin" && txtpass.Text == "12345")
+            if ( Conn.obtenerUsuario(txtuser.Text) && txtpass.Text == "12345")
             {
                 MessageBox.Show("Bienvenido Administrador");
             

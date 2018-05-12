@@ -34,6 +34,12 @@ namespace CapaDatos
             return Ora;
         }
 
+        public bool obtenerUsuario(String nombre)
+        {
+
+            return false;
+        }
+
         public OracleConnection CerrarConexion()
         {
             if (Ora.State == ConnectionState.Open)
