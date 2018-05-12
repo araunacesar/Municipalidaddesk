@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using System.Data.OracleClient;
+using CapaDatos;
 
 namespace CapaPresentacion
 {
@@ -18,6 +19,7 @@ namespace CapaPresentacion
         {
             InitializeComponent();
         }
+        private CDconexion Conn { get; }
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
@@ -30,7 +32,8 @@ namespace CapaPresentacion
 
         private void btnlogin_Click(object sender, EventArgs e)
         {
-            
+            OracleConnection OC = Conn.AbrirConexion();
+
        
             if (txtuser.Text == "admin" && txtpass.Text == "12345")
             {
@@ -43,6 +46,7 @@ namespace CapaPresentacion
                 txtuser.Clear();
                 txtpass.Clear();
             }
+            OC = Conn.CerrarConexion();
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)

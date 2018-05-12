@@ -12,10 +12,18 @@ using System.Drawing;
 
 namespace CapaDatos
 {
-    class CDconexion
+    public class CDconexion
     {
-        private OracleConnection Ora = new OracleConnection("DATA SOURCE = GESTION_PERMISO; PASSWORD = gestion; USER ID = gestion_permiso;");
+        
 
+    public OracleConnection Ora { get; set; }
+        
+
+        public CDconexion()
+        {
+            Ora = new OracleConnection("DATA SOURCE = GESTION_PERMISO; PASSWORD = gestion; USER ID = gestion_permiso;");
+            
+        }
         public OracleConnection AbrirConexion()
         {
             if (Ora.State == ConnectionState.Closed)
@@ -23,6 +31,7 @@ namespace CapaDatos
                 Ora.Open();
                 return Ora;
             }
+            return Ora;
         }
 
         public OracleConnection CerrarConexion()
@@ -32,6 +41,7 @@ namespace CapaDatos
                 Ora.Close();
                 return Ora;
             }
+            return Ora;
         }
 
     }
