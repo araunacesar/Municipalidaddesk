@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using System.Data.OracleClient;
 using CapaDatos;
+using Administrador_Municipalidad;
 
 namespace CapaPresentacion
 {
@@ -19,7 +20,7 @@ namespace CapaPresentacion
         {
             InitializeComponent();
         }
-        private CDconexion Conn { get; }
+        
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
@@ -32,13 +33,17 @@ namespace CapaPresentacion
 
         private void btnlogin_Click(object sender, EventArgs e)
         {
+            CDconexion Conn = new CDconexion();
             OracleConnection OC = Conn.AbrirConexion();
+            
 
        
-            if ( Conn.obtenerUsuario(txtuser.Text) && txtpass.Text == "12345")
+            if ( Conn.obtenerCodUser(txtuser.Text,txtpass.Text).Equals("0"))
             {
                 MessageBox.Show("Bienvenido Administrador");
-            
+                this.Hide();
+                Form2 f2 = new Form2();
+                f2.ShowDialog();
             }
             else
             {
@@ -46,7 +51,7 @@ namespace CapaPresentacion
                 txtuser.Clear();
                 txtpass.Clear();
             }
-            OC = Conn.CerrarConexion();
+            Console.WriteLine("Estado Conexion: "+Conn.CerrarConexion());
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)

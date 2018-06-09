@@ -13,16 +13,18 @@ using System.Drawing;
 namespace CapaDatos
 {
     public class CDconexion
+
     {
         
 
     public OracleConnection Ora { get; set; }
-        
+    public OracleCommand cmd { get; set; }
+    
 
         public CDconexion()
         {
-            Ora = new OracleConnection("DATA SOURCE = GESTION_PERMISO; PASSWORD = gestion; USER ID = gestion_permiso;");
-            
+            Ora = new OracleConnection("DATA SOURCE = xe; PASSWORD = 123; USER ID = muni;");
+            cmd = new OracleCommand();
         }
         public OracleConnection AbrirConexion()
         {
@@ -34,20 +36,33 @@ namespace CapaDatos
             return Ora;
         }
 
-        public bool obtenerUsuario(String nombre)
+        public string obtenerCodUser(string nombre, string pw)
         {
-
-            return false;
+            cmd.Connection = Ora;
+            string resultado="";
+            cmd.CommandText = "Select tipo_user_cod_user from PERSONAL where usuario='"+nombre+"' and password='"+pw+"'";
+            cmd.CommandType = CommandType.Text;
+            OracleDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                Console.WriteLine(reader.GetValue(0));
+                resultado = resultado + reader.GetValue(0);
+            }
+            return resultado;
         }
 
-        public OracleConnection CerrarConexion()
+        public string CerrarConexion()
         {
             if (Ora.State == ConnectionState.Open)
             {
                 Ora.Close();
-                return Ora;
+                return Ora.State.ToString();
             }
-            return Ora;
+            else
+            {
+                Ora.Close();
+            }
+            return Ora.State.ToString();
         }
 
     }
