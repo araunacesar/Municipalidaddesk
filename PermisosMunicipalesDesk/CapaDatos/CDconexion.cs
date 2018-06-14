@@ -23,7 +23,7 @@ namespace CapaDatos
 
         public CDconexion()
         {
-            Ora = new OracleConnection("DATA SOURCE = xe; PASSWORD = 123; USER ID = muni;");
+            Ora = new OracleConnection("DATA SOURCE = xe; PASSWORD = gestion; USER ID = gestion_permiso;");
             cmd = new OracleCommand();
         }
         public OracleConnection AbrirConexion()
@@ -33,6 +33,7 @@ namespace CapaDatos
                 Ora.Open();
                 return Ora;
             }
+            Console.WriteLine("Estado: " +Ora.State);
             return Ora;
         }
 
@@ -45,7 +46,7 @@ namespace CapaDatos
             OracleDataReader reader = cmd.ExecuteReader();
             while (reader.Read())
             {
-                Console.WriteLine(reader.GetValue(0));
+                Console.WriteLine("CodUser: "+reader.GetValue(0));
                 resultado = resultado + reader.GetValue(0);
             }
             return resultado;

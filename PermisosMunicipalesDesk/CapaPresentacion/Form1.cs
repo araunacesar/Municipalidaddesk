@@ -38,7 +38,7 @@ namespace CapaPresentacion
             
 
        
-            if ( Conn.obtenerCodUser(txtuser.Text,txtpass.Text).Equals("0"))
+            if ( Conn.obtenerCodUser(txtuser.Text,txtpass.Text).Equals("1"))
             {
                 MessageBox.Show("Bienvenido Administrador");
                 this.Hide();
