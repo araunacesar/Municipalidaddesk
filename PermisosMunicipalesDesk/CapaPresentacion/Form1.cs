@@ -40,10 +40,12 @@ namespace CapaPresentacion
        
             if ( Conn.obtenerCodUser(txtuser.Text,txtpass.Text).Equals("1"))
             {
+                Console.WriteLine("Objeto Persona:" + Conn.obtenerNombreUser(txtuser.Text));
                 MessageBox.Show("Bienvenido Administrador");
                 this.Hide();
                 Form2 f2 = new Form2();
                 f2.ShowDialog();
+                
             }
             else
             {
