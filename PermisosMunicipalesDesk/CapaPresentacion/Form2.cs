@@ -1,4 +1,5 @@
-﻿using CapaDatos;
+﻿using CapaPresentacion;
+using CapaDatos;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,6 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 
+
 namespace Administrador_Municipalidad
 {
     public partial class Form2 : Form
@@ -19,6 +21,11 @@ namespace Administrador_Municipalidad
         {
             InitializeComponent();
         }
+
+        [DllImport("user32.Dll", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+        [DllImport("user32.Dll", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hwnd, int wmsg, int wparam, int Iparam);
 
         private void label3_Click(object sender, EventArgs e)
         {
@@ -83,6 +90,61 @@ namespace Administrador_Municipalidad
         private void PicMinimizar_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void PanelContenedor_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void AbrirFormInPanel(object Formhijo)
+        {
+            if (this.PanelContenedor.Controls.Count > 0)
+                this.PanelContenedor.Controls.RemoveAt(0);
+            Form ff = Formhijo as Form;
+            ff.TopLevel = false;
+            ff.Dock = DockStyle.Fill;
+            this.PanelContenedor.Controls.Add(ff);
+            this.PanelContenedor.Tag = ff;
+            ff.Show();
+
+        }
+
+        private void BtnFuncionarios_Click(object sender, EventArgs e)
+        {
+            AbrirFormInPanel(new FormFuncionarios());
+        }
+
+        private void BtnMantencion_Click(object sender, EventArgs e)
+        {
+            AbrirFormInPanel(new FormMantencion());
+        }
+
+        private void BtnPermisos_Click(object sender, EventArgs e)
+        {
+            AbrirFormInPanel(new FormPermisosIngresados());
+        }
+
+        private void BtnVerificaciones_Click(object sender, EventArgs e)
+        {
+            AbrirFormInPanel(new FormVerificaciones());
+        }
+
+        private void BtnDescargas_Click(object sender, EventArgs e)
+        {
+            AbrirFormInPanel(new FormDescargas());
+        }
+
+        private void Salir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Form1 ss = new Form1();
+            ss.Show();
+        }
+
+        private void lblName_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
