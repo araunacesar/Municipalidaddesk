@@ -23,7 +23,7 @@ namespace Administrador_Municipalidad
         
         
         private CDconexion conn { get; }
-       
+        
 
         public Form2()
         {
@@ -120,25 +120,8 @@ namespace Administrador_Municipalidad
 
         private void BtnFuncionarios_Click(object sender, EventArgs e)
         {
-            AbrirFormInPanel(new FormFuncionarios()); // llamamos al formulario de funcionarios
-
-           
-            conn.Ora.Open();
-            OracleCommand comando = new OracleCommand("CARGAR_PERSONAL",conn.Ora);
-            comando.CommandType = System.Data.CommandType.StoredProcedure;
-            comando.Parameters.Add("REGISTROS", OracleType.Cursor).Direction=ParameterDirection.Output;
-
-            OracleDataAdapter adaptador = new OracleDataAdapter();
-            adaptador.SelectCommand = comando;
-            DataTable tabla = new DataTable();
-            adaptador.Fill(tabla); //llena la tabla con los datos de la estructura logica.
-            FormFuncionarios ff = new FormFuncionarios();
-            ff.DGVListarPersonal.DataSource = tabla;
+            AbrirFormInPanel(new FormFuncionarios()); // llamamos al formulario desde el boton funcionarios
             
-
-            conn.Ora.Close();
-
-
         }
 
         private void BtnMantencion_Click(object sender, EventArgs e)

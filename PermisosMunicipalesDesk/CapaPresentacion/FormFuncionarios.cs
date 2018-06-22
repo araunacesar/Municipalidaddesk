@@ -7,11 +7,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CapaDatos;
+using CapaPresentacion;
+using System.Runtime.InteropServices;
+using System.Data.OracleClient;
 
 namespace CapaPresentacion
 {
     public partial class FormFuncionarios : Form
     {
+        private CDconexion conn { get; }
         
         public FormFuncionarios()
         {
@@ -33,11 +38,14 @@ namespace CapaPresentacion
         private void FormFuncionarios_Load(object sender, EventArgs e)
         {
 
+           
         }
 
-        private void DGVListarPersonal_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        public void DGVListarPersonal_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
+
+        
     }
 }
