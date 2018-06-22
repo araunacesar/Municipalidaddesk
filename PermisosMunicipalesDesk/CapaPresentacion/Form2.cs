@@ -1,23 +1,35 @@
 ﻿using CapaPresentacion;
 using CapaDatos;
 using System;
+using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using System.Data.OracleClient;
-using CapaPresentacion;
+
+
+
+
 
 namespace Administrador_Municipalidad
 {
     public partial class Form2 : Form
     {
+        
+        
+        private CDconexion conn { get; }
+        
+
         public Form2()
         {
             InitializeComponent();
         }
 
-        
-        FormFuncionarios FF = new FormFuncionarios();
         [DllImport("user32.Dll", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
         [DllImport("user32.Dll", EntryPoint = "SendMessage")]
@@ -108,8 +120,7 @@ namespace Administrador_Municipalidad
 
         private void BtnFuncionarios_Click(object sender, EventArgs e)
         {
-            
-            AbrirFormInPanel(FF);
+            AbrirFormInPanel(new FormFuncionarios()); // llamamos al formulario desde el boton funcionarios
             
         }
 
