@@ -388,6 +388,7 @@
             this.DGVListarPersonal.Name = "DGVListarPersonal";
             this.DGVListarPersonal.Size = new System.Drawing.Size(908, 248);
             this.DGVListarPersonal.TabIndex = 32;
+            this.DGVListarPersonal.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVListarPersonal_CellContentClick);
             // 
             // FormFuncionarios
             // 
@@ -427,7 +428,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormFuncionarios";
             this.Text = "FormFuncionarios";
-            Load += new System.EventHandler(FormFuncionarios_Load);
+            this.Load += new System.EventHandler(this.FormFuncionarios_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

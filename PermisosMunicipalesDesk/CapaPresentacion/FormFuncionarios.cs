@@ -12,6 +12,7 @@ namespace CapaPresentacion
 {
     public partial class FormFuncionarios : Form
     {
+        
         public FormFuncionarios()
         {
             InitializeComponent();
@@ -19,7 +20,7 @@ namespace CapaPresentacion
 
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        public void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
@@ -30,6 +31,11 @@ namespace CapaPresentacion
         }
 
         private void FormFuncionarios_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void DGVListarPersonal_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
