@@ -23,6 +23,7 @@ namespace Administrador_Municipalidad
         
         
         private CDconexion conn { get; }
+        private OracleConnection Ora = new OracleConnection();
         
 
         public Form2()
@@ -122,6 +123,7 @@ namespace Administrador_Municipalidad
         {
             AbrirFormInPanel(new FormFuncionarios()); // llamamos al formulario desde el boton funcionarios
             
+
         }
 
         private void BtnMantencion_Click(object sender, EventArgs e)
