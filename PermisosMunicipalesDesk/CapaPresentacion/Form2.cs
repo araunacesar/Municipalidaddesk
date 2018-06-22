@@ -121,8 +121,19 @@ namespace Administrador_Municipalidad
 
         private void BtnFuncionarios_Click(object sender, EventArgs e)
         {
-            AbrirFormInPanel(new FormFuncionarios()); // llamamos al formulario desde el boton funcionarios
-            
+            FormFuncionarios FF = new FormFuncionarios();
+            AbrirFormInPanel(FF); // llamamos al formulario desde el boton funcionarios
+            CDconexion Conn = new CDconexion();
+            Ora = Conn.AbrirConexion();
+            OracleCommand cmd = new OracleCommand("P_LISTAR_PERSONAL", Ora);
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+            cmd.Parameters.Add("registros", OracleType.Cursor).Direction = ParameterDirection.Output;
+            OracleDataAdapter oda = new OracleDataAdapter();
+            oda.SelectCommand = cmd;
+            DataTable lista = new DataTable();
+            oda.Fill(lista);
+            FF.DGVListarPersonal.DataSource = lista;
+            Console.WriteLine("Status: " + Conn.CerrarConexion());
 
         }
 

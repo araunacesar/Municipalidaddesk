@@ -22,21 +22,7 @@ namespace CapaPresentacion
         public FormFuncionarios()
         {
             InitializeComponent();
-            CDconexion Conn = new CDconexion();
-            Ora = Conn.AbrirConexion();
-            OracleCommand cmd = new OracleCommand("P_LISTAR_PERSONAL", Ora);
-            cmd.CommandType = System.Data.CommandType.StoredProcedure;
-            cmd.Parameters.Add("registros",OracleType.Cursor).Direction=ParameterDirection.Output;
-            OracleDataAdapter oda = new OracleDataAdapter();
-            oda.SelectCommand = cmd;
-            Console.WriteLine("tostring: " + cmd.ToString());
-            DataTable lista = new DataTable();
-
-            oda.Fill(lista);
-            DGVListarPersonal.DataSource = lista;
-            Console.WriteLine("lista: " + lista);
-            //DGVListarPersonal.DataSource = "HOLAAAAA";
-            Console.WriteLine("Status: "+Conn.CerrarConexion());
+            
 
 
         }
