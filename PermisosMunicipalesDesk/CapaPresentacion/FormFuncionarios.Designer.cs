@@ -79,7 +79,6 @@
             this.BtnAgregar.TabIndex = 1;
             this.BtnAgregar.Text = "Agregar";
             this.BtnAgregar.UseVisualStyleBackColor = false;
-
             // 
             // button1
             // 
@@ -471,6 +470,6 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.DataGridView DGVListarPersonal;
+        public System.Windows.Forms.DataGridView DGVListarPersonal;
     }
 }

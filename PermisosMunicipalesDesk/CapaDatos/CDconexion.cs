@@ -61,7 +61,7 @@ namespace CapaDatos
             OracleDataReader reader = cmd.ExecuteReader();
             while (reader.Read())
             {
-                Console.WriteLine(reader.GetValue(i));
+                //Console.WriteLine(reader.GetValue(i));
                 resultado = resultado +","+ reader.GetValue(0);
                 i = i+1;
             }
