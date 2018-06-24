@@ -119,42 +119,125 @@ namespace Administrador_Municipalidad
 
         }
 
-        private void BtnFuncionarios_Click(object sender, EventArgs e)
+        private void BtnFuncionarios_Click(object sender, EventArgs e) //BOTON FUNCIONARIO
         {
             FormFuncionarios FF = new FormFuncionarios();
             AbrirFormInPanel(FF); // llamamos al formulario desde el boton funcionarios
             CDconexion Conn = new CDconexion();
             Ora = Conn.AbrirConexion();
-            OracleCommand cmd = new OracleCommand("P_LISTAR_PERSONAL", Ora);
+            OracleCommand cmd = new OracleCommand("SP_ListarPersonal", Ora);
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+            cmd.Parameters.Add("registros", OracleType.Cursor).Direction = ParameterDirection.Output;
+            OracleDataAdapter oda = new OracleDataAdapter();
+            oda.SelectCommand = cmd;
+            DataTable lista = new DataTable();
+            oda.Fill(lista);        
+            FF.DGVListarPersonal.DataSource = lista;
+            Console.WriteLine("Status: " + Conn.CerrarConexion());
+
+        }
+
+        private void BtnMantencion_Click(object sender, EventArgs e) //BOTON MANTENCION
+        {
+            //Mantencion de Tipos
+            FormMantencion FMT = new FormMantencion();
+            AbrirFormInPanel(FMT);
+            CDconexion Cont = new CDconexion();
+            Ora = Cont.AbrirConexion();
+            OracleCommand cmdt = new OracleCommand("SP_ListarTipoPermiso ", Ora); //crear este procedimiento
+            cmdt.CommandType = System.Data.CommandType.StoredProcedure;
+            cmdt.Parameters.Add("registros", OracleType.Cursor).Direction = ParameterDirection.Output;
+            OracleDataAdapter odat = new OracleDataAdapter();
+            odat.SelectCommand = cmdt;
+            DataTable listat = new DataTable();
+            odat.Fill(listat);
+            FMT.dgvTipos.DataSource = listat;
+            Console.WriteLine("Status: " + Cont.CerrarConexion());
+
+            // Mantencion de Motivos
+            /*
+            FormMantencion FMM = new FormMantencion();
+            AbrirFormInPanel(FMM);
+            CDconexion Conm = new CDconexion();
+            Ora = Conm.AbrirConexion();
+            OracleCommand cmdm = new OracleCommand("SP_ListarTipoPermiso ", Ora); //crear este procedimiento
+            cmdm.CommandType = System.Data.CommandType.StoredProcedure;
+            cmdm.Parameters.Add("registros", OracleType.Cursor).Direction = ParameterDirection.Output;
+            OracleDataAdapter odam = new OracleDataAdapter();
+            odam.SelectCommand = cmdm;
+            DataTable listam = new DataTable();
+            odam.Fill(listam);
+            FMM.dgvMotivos.DataSource = listam;
+            Console.WriteLine("Status: " + Conm.CerrarConexion());
+           
+            // Mantencion de Unidades
+            
+            FormMantencion FMU = new FormMantencion();
+            AbrirFormInPanel(FMU);
+            CDconexion Conu = new CDconexion();
+            Ora = Conu.AbrirConexion();
+            OracleCommand cmdu = new OracleCommand("SP_ListarTipoPermiso ", Ora); //crear este procedimiento
+            cmdu.CommandType = System.Data.CommandType.StoredProcedure;
+            cmdu.Parameters.Add("registros", OracleType.Cursor).Direction = ParameterDirection.Output;
+            OracleDataAdapter odau = new OracleDataAdapter();
+            odau.SelectCommand = cmdu;
+            DataTable listau = new DataTable();
+            odau.Fill(listau);
+            FMU.dgvUnidades.DataSource = listau;
+            Console.WriteLine("Status: " + Conu.CerrarConexion());
+            */
+        }
+
+        private void BtnPermisos_Click(object sender, EventArgs e) //BOTON PERMISOS
+        {
+            FormPermisosIngresados FPI = new FormPermisosIngresados();
+            AbrirFormInPanel(FPI);
+            CDconexion Conn = new CDconexion();
+            Ora = Conn.AbrirConexion();
+            OracleCommand cmd = new OracleCommand("SP_ListarSoliPermiso", Ora); //crear este procedimiento
             cmd.CommandType = System.Data.CommandType.StoredProcedure;
             cmd.Parameters.Add("registros", OracleType.Cursor).Direction = ParameterDirection.Output;
             OracleDataAdapter oda = new OracleDataAdapter();
             oda.SelectCommand = cmd;
             DataTable lista = new DataTable();
             oda.Fill(lista);
-            FF.DGVListarPersonal.DataSource = lista;
+            FPI.DGVPermisos.DataSource = lista;
             Console.WriteLine("Status: " + Conn.CerrarConexion());
-
         }
 
-        private void BtnMantencion_Click(object sender, EventArgs e)
+        private void BtnVerificaciones_Click(object sender, EventArgs e) //BOTON VERIFICACIONES
         {
-            AbrirFormInPanel(new FormMantencion());
+            FormVerificaciones FV = new FormVerificaciones();
+            AbrirFormInPanel(FV);
+            CDconexion Conn = new CDconexion();
+            Ora = Conn.AbrirConexion();
+            OracleCommand cmd = new OracleCommand("SP_ListarEstado", Ora); //crear este procedimiento
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+            cmd.Parameters.Add("registros", OracleType.Cursor).Direction = ParameterDirection.Output;
+            OracleDataAdapter oda = new OracleDataAdapter();
+            oda.SelectCommand = cmd;
+            DataTable lista = new DataTable();
+            oda.Fill(lista);
+            FV.DGVverificacion.DataSource = lista;
+            Console.WriteLine("Status: " + Conn.CerrarConexion());
         }
 
-        private void BtnPermisos_Click(object sender, EventArgs e)
+        private void BtnDescargas_Click(object sender, EventArgs e) //BOTON DESCARGAS
+            // **** falta realizar procedimiento para descargas y aplicarlo aqui ****
         {
-            AbrirFormInPanel(new FormPermisosIngresados());
-        }
-
-        private void BtnVerificaciones_Click(object sender, EventArgs e)
-        {
-            AbrirFormInPanel(new FormVerificaciones());
-        }
-
-        private void BtnDescargas_Click(object sender, EventArgs e)
-        {
-            AbrirFormInPanel(new FormDescargas());
+            FormDescargas FD = new FormDescargas();
+            AbrirFormInPanel(FD);
+            CDconexion Conn = new CDconexion();
+            Ora = Conn.AbrirConexion();
+            OracleCommand cmd = new OracleCommand("SP_ListarEstado", Ora); //crear este procedimiento
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+            cmd.Parameters.Add("registros", OracleType.Cursor).Direction = ParameterDirection.Output;
+            OracleDataAdapter oda = new OracleDataAdapter();
+            oda.SelectCommand = cmd;
+            DataTable lista = new DataTable();
+            oda.Fill(lista);
+            FD.DGVDescargas.DataSource = lista;
+            Console.WriteLine("Status: " + Conn.CerrarConexion());
         }
 
         private void Salir_Click(object sender, EventArgs e)

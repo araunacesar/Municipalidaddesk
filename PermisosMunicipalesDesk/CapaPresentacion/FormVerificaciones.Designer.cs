@@ -34,9 +34,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.DGVverificacion = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGVverificacion)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -101,13 +101,14 @@
             this.textBox1.Size = new System.Drawing.Size(100, 20);
             this.textBox1.TabIndex = 5;
             // 
-            // dataGridView1
+            // DGVverificacion
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 82);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(908, 366);
-            this.dataGridView1.TabIndex = 6;
+            this.DGVverificacion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGVverificacion.Location = new System.Drawing.Point(12, 82);
+            this.DGVverificacion.Name = "DGVverificacion";
+            this.DGVverificacion.Size = new System.Drawing.Size(908, 366);
+            this.DGVverificacion.TabIndex = 6;
+            this.DGVverificacion.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVverificacion_CellContentClick);
             // 
             // FormVerificaciones
             // 
@@ -115,7 +116,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
             this.ClientSize = new System.Drawing.Size(936, 506);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.DGVverificacion);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -126,7 +127,7 @@
             this.Text = "FormVerificaciones";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGVverificacion)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -140,6 +141,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        public System.Windows.Forms.DataGridView DGVverificacion;
     }
 }

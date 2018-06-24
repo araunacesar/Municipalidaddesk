@@ -33,9 +33,9 @@
             this.BtnDescargar = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.DGVDescargas = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGVDescargas)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -91,13 +91,14 @@
             this.textBox1.Size = new System.Drawing.Size(100, 20);
             this.textBox1.TabIndex = 4;
             // 
-            // dataGridView1
+            // DGVDescargas
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 82);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(912, 366);
-            this.dataGridView1.TabIndex = 5;
+            this.DGVDescargas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGVDescargas.Location = new System.Drawing.Point(12, 82);
+            this.DGVDescargas.Name = "DGVDescargas";
+            this.DGVDescargas.Size = new System.Drawing.Size(912, 366);
+            this.DGVDescargas.TabIndex = 5;
+            this.DGVDescargas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVDescargas_CellContentClick);
             // 
             // FormDescargas
             // 
@@ -105,7 +106,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
             this.ClientSize = new System.Drawing.Size(936, 506);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.DGVDescargas);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.BtnDescargar);
@@ -115,7 +116,7 @@
             this.Text = "FormDescargas";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGVDescargas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -128,6 +129,6 @@
         private System.Windows.Forms.Button BtnDescargar;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        public System.Windows.Forms.DataGridView DGVDescargas;
     }
 }

@@ -18,35 +18,17 @@ namespace CapaPresentacion
     {
         private CDconexion conn { get; }
         private OracleConnection Ora = new OracleConnection();
-        
         public FormFuncionarios()
         {
             InitializeComponent();
-            
-
-
         }
+        public void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e){}
 
-        public void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e){}
 
-        }
+        private void FormFuncionarios_Load(object sender, EventArgs e){}
 
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void FormFuncionarios_Load(object sender, EventArgs e)
-        {
-
-           
-        }
-
-        public void DGVListarPersonal_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
+        public void DGVListarPersonal_CellContentClick(object sender, DataGridViewCellEventArgs e){}
 
         
     }

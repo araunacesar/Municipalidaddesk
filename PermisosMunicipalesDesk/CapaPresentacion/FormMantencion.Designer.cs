@@ -30,18 +30,17 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.txtRutTipos = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.btnBuscarTipos = new System.Windows.Forms.Button();
-            this.btnActualizarTipos = new System.Windows.Forms.Button();
-            this.btnEliminarTipos = new System.Windows.Forms.Button();
-            this.btnGuardarTipo = new System.Windows.Forms.Button();
+            this.TabMantencion = new System.Windows.Forms.TabControl();
+            this.TabPageTipos = new System.Windows.Forms.TabPage();
             this.dgvTipos = new System.Windows.Forms.DataGridView();
+            this.btnGuardarTipo = new System.Windows.Forms.Button();
+            this.btnEliminarTipos = new System.Windows.Forms.Button();
+            this.btnActualizarTipos = new System.Windows.Forms.Button();
+            this.btnBuscarTipos = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtRutTipos = new System.Windows.Forms.TextBox();
+            this.TabPageMotivos = new System.Windows.Forms.TabPage();
             this.dgvMotivos = new System.Windows.Forms.DataGridView();
             this.btnGuardarMotivo = new System.Windows.Forms.Button();
             this.btnEliminarMotivo = new System.Windows.Forms.Button();
@@ -50,6 +49,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.txtRutMotivos = new System.Windows.Forms.TextBox();
+            this.TabPageUnidades = new System.Windows.Forms.TabPage();
             this.dgvUnidades = new System.Windows.Forms.DataGridView();
             this.btnGuardarUnidad = new System.Windows.Forms.Button();
             this.btnEliminarUnidad = new System.Windows.Forms.Button();
@@ -59,12 +59,12 @@
             this.label7 = new System.Windows.Forms.Label();
             this.txtRutUnidades = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
-            this.tabControl1.SuspendLayout();
-            this.tabPage1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
-            this.tabPage3.SuspendLayout();
+            this.TabMantencion.SuspendLayout();
+            this.TabPageTipos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTipos)).BeginInit();
+            this.TabPageMotivos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMotivos)).BeginInit();
+            this.TabPageUnidades.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUnidades)).BeginInit();
             this.SuspendLayout();
             // 
@@ -88,131 +88,45 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Mantenciones";
             // 
-            // tabControl1
+            // TabMantencion
             // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Location = new System.Drawing.Point(16, 57);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(908, 250);
-            this.tabControl1.TabIndex = 1;
+            this.TabMantencion.Controls.Add(this.TabPageTipos);
+            this.TabMantencion.Controls.Add(this.TabPageMotivos);
+            this.TabMantencion.Controls.Add(this.TabPageUnidades);
+            this.TabMantencion.Location = new System.Drawing.Point(16, 57);
+            this.TabMantencion.Name = "TabMantencion";
+            this.TabMantencion.SelectedIndex = 0;
+            this.TabMantencion.Size = new System.Drawing.Size(908, 250);
+            this.TabMantencion.TabIndex = 1;
+            this.TabMantencion.SelectedIndexChanged += new System.EventHandler(this.TabPageTipos_Click);
             // 
-            // tabPage1
+            // TabPageTipos
             // 
-            this.tabPage1.BackColor = System.Drawing.Color.DimGray;
-            this.tabPage1.Controls.Add(this.dgvTipos);
-            this.tabPage1.Controls.Add(this.btnGuardarTipo);
-            this.tabPage1.Controls.Add(this.btnEliminarTipos);
-            this.tabPage1.Controls.Add(this.btnActualizarTipos);
-            this.tabPage1.Controls.Add(this.btnBuscarTipos);
-            this.tabPage1.Controls.Add(this.label3);
-            this.tabPage1.Controls.Add(this.label2);
-            this.tabPage1.Controls.Add(this.txtRutTipos);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(900, 224);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Tipos";
+            this.TabPageTipos.BackColor = System.Drawing.Color.DimGray;
+            this.TabPageTipos.Controls.Add(this.dgvTipos);
+            this.TabPageTipos.Controls.Add(this.btnGuardarTipo);
+            this.TabPageTipos.Controls.Add(this.btnEliminarTipos);
+            this.TabPageTipos.Controls.Add(this.btnActualizarTipos);
+            this.TabPageTipos.Controls.Add(this.btnBuscarTipos);
+            this.TabPageTipos.Controls.Add(this.label3);
+            this.TabPageTipos.Controls.Add(this.label2);
+            this.TabPageTipos.Controls.Add(this.txtRutTipos);
+            this.TabPageTipos.Location = new System.Drawing.Point(4, 22);
+            this.TabPageTipos.Name = "TabPageTipos";
+            this.TabPageTipos.Padding = new System.Windows.Forms.Padding(3);
+            this.TabPageTipos.Size = new System.Drawing.Size(900, 224);
+            this.TabPageTipos.TabIndex = 0;
+            this.TabPageTipos.Text = "Tipos";
+            this.TabPageTipos.Click += new System.EventHandler(this.TabPageTipos_Click);
             // 
-            // tabPage2
+            // dgvTipos
             // 
-            this.tabPage2.BackColor = System.Drawing.Color.DimGray;
-            this.tabPage2.Controls.Add(this.dgvMotivos);
-            this.tabPage2.Controls.Add(this.btnGuardarMotivo);
-            this.tabPage2.Controls.Add(this.btnEliminarMotivo);
-            this.tabPage2.Controls.Add(this.btnActualizarMotivo);
-            this.tabPage2.Controls.Add(this.btnBuscarMotivo);
-            this.tabPage2.Controls.Add(this.label4);
-            this.tabPage2.Controls.Add(this.label5);
-            this.tabPage2.Controls.Add(this.txtRutMotivos);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(900, 224);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Motivos";
-            // 
-            // tabPage3
-            // 
-            this.tabPage3.BackColor = System.Drawing.Color.DimGray;
-            this.tabPage3.Controls.Add(this.dgvUnidades);
-            this.tabPage3.Controls.Add(this.btnGuardarUnidad);
-            this.tabPage3.Controls.Add(this.btnEliminarUnidad);
-            this.tabPage3.Controls.Add(this.btnActualizarUnidad);
-            this.tabPage3.Controls.Add(this.btnBuscarUnidad);
-            this.tabPage3.Controls.Add(this.label6);
-            this.tabPage3.Controls.Add(this.label7);
-            this.tabPage3.Controls.Add(this.txtRutUnidades);
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(900, 224);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Unidades";
-            // 
-            // txtRutTipos
-            // 
-            this.txtRutTipos.Location = new System.Drawing.Point(56, 40);
-            this.txtRutTipos.Name = "txtRutTipos";
-            this.txtRutTipos.Size = new System.Drawing.Size(100, 20);
-            this.txtRutTipos.TabIndex = 0;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(26, 47);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(24, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Rut";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(26, 15);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(180, 13);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Ingresa el Rut que necesitas buscar ";
-            // 
-            // btnBuscarTipos
-            // 
-            this.btnBuscarTipos.BackColor = System.Drawing.Color.DarkGray;
-            this.btnBuscarTipos.FlatAppearance.BorderSize = 0;
-            this.btnBuscarTipos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBuscarTipos.Location = new System.Drawing.Point(56, 88);
-            this.btnBuscarTipos.Name = "btnBuscarTipos";
-            this.btnBuscarTipos.Size = new System.Drawing.Size(75, 23);
-            this.btnBuscarTipos.TabIndex = 3;
-            this.btnBuscarTipos.Text = "Buscar";
-            this.btnBuscarTipos.UseVisualStyleBackColor = false;
-            // 
-            // btnActualizarTipos
-            // 
-            this.btnActualizarTipos.BackColor = System.Drawing.Color.DarkGray;
-            this.btnActualizarTipos.FlatAppearance.BorderSize = 0;
-            this.btnActualizarTipos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnActualizarTipos.Location = new System.Drawing.Point(56, 117);
-            this.btnActualizarTipos.Name = "btnActualizarTipos";
-            this.btnActualizarTipos.Size = new System.Drawing.Size(75, 23);
-            this.btnActualizarTipos.TabIndex = 4;
-            this.btnActualizarTipos.Text = "Actualizar";
-            this.btnActualizarTipos.UseVisualStyleBackColor = false;
-            // 
-            // btnEliminarTipos
-            // 
-            this.btnEliminarTipos.BackColor = System.Drawing.Color.DarkGray;
-            this.btnEliminarTipos.FlatAppearance.BorderSize = 0;
-            this.btnEliminarTipos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEliminarTipos.Location = new System.Drawing.Point(56, 146);
-            this.btnEliminarTipos.Name = "btnEliminarTipos";
-            this.btnEliminarTipos.Size = new System.Drawing.Size(75, 23);
-            this.btnEliminarTipos.TabIndex = 5;
-            this.btnEliminarTipos.Text = "Eliminar";
-            this.btnEliminarTipos.UseVisualStyleBackColor = false;
+            this.dgvTipos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTipos.Location = new System.Drawing.Point(257, 40);
+            this.dgvTipos.Name = "dgvTipos";
+            this.dgvTipos.Size = new System.Drawing.Size(605, 158);
+            this.dgvTipos.TabIndex = 7;
+            this.dgvTipos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTipos_CellContentClick);
             // 
             // btnGuardarTipo
             // 
@@ -226,13 +140,85 @@
             this.btnGuardarTipo.Text = "Guardar";
             this.btnGuardarTipo.UseVisualStyleBackColor = false;
             // 
-            // dgvTipos
+            // btnEliminarTipos
             // 
-            this.dgvTipos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTipos.Location = new System.Drawing.Point(257, 40);
-            this.dgvTipos.Name = "dgvTipos";
-            this.dgvTipos.Size = new System.Drawing.Size(605, 158);
-            this.dgvTipos.TabIndex = 7;
+            this.btnEliminarTipos.BackColor = System.Drawing.Color.DarkGray;
+            this.btnEliminarTipos.FlatAppearance.BorderSize = 0;
+            this.btnEliminarTipos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminarTipos.Location = new System.Drawing.Point(56, 146);
+            this.btnEliminarTipos.Name = "btnEliminarTipos";
+            this.btnEliminarTipos.Size = new System.Drawing.Size(75, 23);
+            this.btnEliminarTipos.TabIndex = 5;
+            this.btnEliminarTipos.Text = "Eliminar";
+            this.btnEliminarTipos.UseVisualStyleBackColor = false;
+            // 
+            // btnActualizarTipos
+            // 
+            this.btnActualizarTipos.BackColor = System.Drawing.Color.DarkGray;
+            this.btnActualizarTipos.FlatAppearance.BorderSize = 0;
+            this.btnActualizarTipos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnActualizarTipos.Location = new System.Drawing.Point(56, 117);
+            this.btnActualizarTipos.Name = "btnActualizarTipos";
+            this.btnActualizarTipos.Size = new System.Drawing.Size(75, 23);
+            this.btnActualizarTipos.TabIndex = 4;
+            this.btnActualizarTipos.Text = "Actualizar";
+            this.btnActualizarTipos.UseVisualStyleBackColor = false;
+            // 
+            // btnBuscarTipos
+            // 
+            this.btnBuscarTipos.BackColor = System.Drawing.Color.DarkGray;
+            this.btnBuscarTipos.FlatAppearance.BorderSize = 0;
+            this.btnBuscarTipos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscarTipos.Location = new System.Drawing.Point(56, 88);
+            this.btnBuscarTipos.Name = "btnBuscarTipos";
+            this.btnBuscarTipos.Size = new System.Drawing.Size(75, 23);
+            this.btnBuscarTipos.TabIndex = 3;
+            this.btnBuscarTipos.Text = "Buscar";
+            this.btnBuscarTipos.UseVisualStyleBackColor = false;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(26, 15);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(180, 13);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Ingresa el Rut que necesitas buscar ";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(26, 47);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(24, 13);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Rut";
+            // 
+            // txtRutTipos
+            // 
+            this.txtRutTipos.Location = new System.Drawing.Point(56, 40);
+            this.txtRutTipos.Name = "txtRutTipos";
+            this.txtRutTipos.Size = new System.Drawing.Size(100, 20);
+            this.txtRutTipos.TabIndex = 0;
+            // 
+            // TabPageMotivos
+            // 
+            this.TabPageMotivos.BackColor = System.Drawing.Color.DimGray;
+            this.TabPageMotivos.Controls.Add(this.dgvMotivos);
+            this.TabPageMotivos.Controls.Add(this.btnGuardarMotivo);
+            this.TabPageMotivos.Controls.Add(this.btnEliminarMotivo);
+            this.TabPageMotivos.Controls.Add(this.btnActualizarMotivo);
+            this.TabPageMotivos.Controls.Add(this.btnBuscarMotivo);
+            this.TabPageMotivos.Controls.Add(this.label4);
+            this.TabPageMotivos.Controls.Add(this.label5);
+            this.TabPageMotivos.Controls.Add(this.txtRutMotivos);
+            this.TabPageMotivos.Location = new System.Drawing.Point(4, 22);
+            this.TabPageMotivos.Name = "TabPageMotivos";
+            this.TabPageMotivos.Padding = new System.Windows.Forms.Padding(3);
+            this.TabPageMotivos.Size = new System.Drawing.Size(900, 224);
+            this.TabPageMotivos.TabIndex = 1;
+            this.TabPageMotivos.Text = "Motivos";
+            this.TabPageMotivos.Click += new System.EventHandler(this.TabPageMotivos_Click);
             // 
             // dgvMotivos
             // 
@@ -241,6 +227,7 @@
             this.dgvMotivos.Name = "dgvMotivos";
             this.dgvMotivos.Size = new System.Drawing.Size(605, 158);
             this.dgvMotivos.TabIndex = 15;
+            this.dgvMotivos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMotivos_CellContentClick);
             // 
             // btnGuardarMotivo
             // 
@@ -315,6 +302,25 @@
             this.txtRutMotivos.Size = new System.Drawing.Size(100, 20);
             this.txtRutMotivos.TabIndex = 8;
             // 
+            // TabPageUnidades
+            // 
+            this.TabPageUnidades.BackColor = System.Drawing.Color.DimGray;
+            this.TabPageUnidades.Controls.Add(this.dgvUnidades);
+            this.TabPageUnidades.Controls.Add(this.btnGuardarUnidad);
+            this.TabPageUnidades.Controls.Add(this.btnEliminarUnidad);
+            this.TabPageUnidades.Controls.Add(this.btnActualizarUnidad);
+            this.TabPageUnidades.Controls.Add(this.btnBuscarUnidad);
+            this.TabPageUnidades.Controls.Add(this.label6);
+            this.TabPageUnidades.Controls.Add(this.label7);
+            this.TabPageUnidades.Controls.Add(this.txtRutUnidades);
+            this.TabPageUnidades.Location = new System.Drawing.Point(4, 22);
+            this.TabPageUnidades.Name = "TabPageUnidades";
+            this.TabPageUnidades.Padding = new System.Windows.Forms.Padding(3);
+            this.TabPageUnidades.Size = new System.Drawing.Size(900, 224);
+            this.TabPageUnidades.TabIndex = 2;
+            this.TabPageUnidades.Text = "Unidades";
+            this.TabPageUnidades.Click += new System.EventHandler(this.TabPageUnidades_Click);
+            // 
             // dgvUnidades
             // 
             this.dgvUnidades.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -322,6 +328,7 @@
             this.dgvUnidades.Name = "dgvUnidades";
             this.dgvUnidades.Size = new System.Drawing.Size(605, 158);
             this.dgvUnidades.TabIndex = 23;
+            this.dgvUnidades.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUnidades_CellContentClick);
             // 
             // btnGuardarUnidad
             // 
@@ -402,22 +409,22 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlText;
             this.ClientSize = new System.Drawing.Size(936, 506);
-            this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.TabMantencion);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormMantencion";
             this.Text = "FormMantencion";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.tabControl1.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
-            this.tabPage3.ResumeLayout(false);
-            this.tabPage3.PerformLayout();
+            this.TabMantencion.ResumeLayout(false);
+            this.TabPageTipos.ResumeLayout(false);
+            this.TabPageTipos.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTipos)).EndInit();
+            this.TabPageMotivos.ResumeLayout(false);
+            this.TabPageMotivos.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMotivos)).EndInit();
+            this.TabPageUnidades.ResumeLayout(false);
+            this.TabPageUnidades.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUnidades)).EndInit();
             this.ResumeLayout(false);
 
@@ -427,11 +434,11 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.DataGridView dgvTipos;
+        private System.Windows.Forms.TabControl TabMantencion;
+        public System.Windows.Forms.TabPage TabPageTipos;
+        public System.Windows.Forms.TabPage TabPageMotivos;
+        public System.Windows.Forms.TabPage TabPageUnidades;
+        public System.Windows.Forms.DataGridView dgvTipos;
         private System.Windows.Forms.Button btnGuardarTipo;
         private System.Windows.Forms.Button btnEliminarTipos;
         private System.Windows.Forms.Button btnActualizarTipos;
@@ -439,7 +446,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtRutTipos;
-        private System.Windows.Forms.DataGridView dgvMotivos;
+        public System.Windows.Forms.DataGridView dgvMotivos;
         private System.Windows.Forms.Button btnGuardarMotivo;
         private System.Windows.Forms.Button btnEliminarMotivo;
         private System.Windows.Forms.Button btnActualizarMotivo;
@@ -447,7 +454,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtRutMotivos;
-        private System.Windows.Forms.DataGridView dgvUnidades;
+        public System.Windows.Forms.DataGridView dgvUnidades;
         private System.Windows.Forms.Button btnGuardarUnidad;
         private System.Windows.Forms.Button btnEliminarUnidad;
         private System.Windows.Forms.Button btnActualizarUnidad;

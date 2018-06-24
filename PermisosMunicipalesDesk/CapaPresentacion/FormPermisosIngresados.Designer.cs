@@ -31,11 +31,11 @@
             this.panelTitulo = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.BtnAgregar = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.DGVPermisos = new System.Windows.Forms.DataGridView();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.panelTitulo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGVPermisos)).BeginInit();
             this.SuspendLayout();
             // 
             // panelTitulo
@@ -73,13 +73,14 @@
             this.BtnAgregar.Text = "Consultar";
             this.BtnAgregar.UseVisualStyleBackColor = false;
             // 
-            // dataGridView1
+            // DGVPermisos
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 82);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(908, 366);
-            this.dataGridView1.TabIndex = 9;
+            this.DGVPermisos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGVPermisos.Location = new System.Drawing.Point(12, 82);
+            this.DGVPermisos.Name = "DGVPermisos";
+            this.DGVPermisos.Size = new System.Drawing.Size(908, 366);
+            this.DGVPermisos.TabIndex = 9;
+            this.DGVPermisos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVPermisos_CellContentClick);
             // 
             // textBox1
             // 
@@ -105,7 +106,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
             this.ClientSize = new System.Drawing.Size(936, 506);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.DGVPermisos);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.BtnAgregar);
@@ -115,7 +116,7 @@
             this.Text = "FormPermisosIngresados";
             this.panelTitulo.ResumeLayout(false);
             this.panelTitulo.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGVPermisos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -126,7 +127,7 @@
         private System.Windows.Forms.Panel panelTitulo;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button BtnAgregar;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        public System.Windows.Forms.DataGridView DGVPermisos;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label3;
     }
