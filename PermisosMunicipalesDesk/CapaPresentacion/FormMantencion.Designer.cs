@@ -434,7 +434,7 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TabControl TabMantencion;
+        public System.Windows.Forms.TabControl TabMantencion;
         public System.Windows.Forms.TabPage TabPageTipos;
         public System.Windows.Forms.TabPage TabPageMotivos;
         public System.Windows.Forms.TabPage TabPageUnidades;

@@ -12,10 +12,6 @@ using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using System.Data.OracleClient;
 
-
-
-
-
 namespace Administrador_Municipalidad
 {
     public partial class Form2 : Form
@@ -153,39 +149,6 @@ namespace Administrador_Municipalidad
             odat.Fill(listat);
             FMT.dgvTipos.DataSource = listat;
             Console.WriteLine("Status: " + Cont.CerrarConexion());
-
-            // Mantencion de Motivos
-            /*
-            FormMantencion FMM = new FormMantencion();
-            AbrirFormInPanel(FMM);
-            CDconexion Conm = new CDconexion();
-            Ora = Conm.AbrirConexion();
-            OracleCommand cmdm = new OracleCommand("SP_ListarTipoPermiso ", Ora); //crear este procedimiento
-            cmdm.CommandType = System.Data.CommandType.StoredProcedure;
-            cmdm.Parameters.Add("registros", OracleType.Cursor).Direction = ParameterDirection.Output;
-            OracleDataAdapter odam = new OracleDataAdapter();
-            odam.SelectCommand = cmdm;
-            DataTable listam = new DataTable();
-            odam.Fill(listam);
-            FMM.dgvMotivos.DataSource = listam;
-            Console.WriteLine("Status: " + Conm.CerrarConexion());
-           
-            // Mantencion de Unidades
-            
-            FormMantencion FMU = new FormMantencion();
-            AbrirFormInPanel(FMU);
-            CDconexion Conu = new CDconexion();
-            Ora = Conu.AbrirConexion();
-            OracleCommand cmdu = new OracleCommand("SP_ListarTipoPermiso ", Ora); //crear este procedimiento
-            cmdu.CommandType = System.Data.CommandType.StoredProcedure;
-            cmdu.Parameters.Add("registros", OracleType.Cursor).Direction = ParameterDirection.Output;
-            OracleDataAdapter odau = new OracleDataAdapter();
-            odau.SelectCommand = cmdu;
-            DataTable listau = new DataTable();
-            odau.Fill(listau);
-            FMU.dgvUnidades.DataSource = listau;
-            Console.WriteLine("Status: " + Conu.CerrarConexion());
-            */
         }
 
         private void BtnPermisos_Click(object sender, EventArgs e) //BOTON PERMISOS
