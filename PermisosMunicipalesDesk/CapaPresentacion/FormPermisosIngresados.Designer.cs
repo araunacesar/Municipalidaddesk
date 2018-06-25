@@ -30,9 +30,9 @@
         {
             this.panelTitulo = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.BtnAgregar = new System.Windows.Forms.Button();
+            this.BtnConsultar = new System.Windows.Forms.Button();
             this.DGVPermisos = new System.Windows.Forms.DataGridView();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txt_rut_permisos = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.panelTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGVPermisos)).BeginInit();
@@ -58,20 +58,20 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Consulta de Permisos";
             // 
-            // BtnAgregar
+            // BtnConsultar
             // 
-            this.BtnAgregar.BackColor = System.Drawing.Color.DimGray;
-            this.BtnAgregar.FlatAppearance.BorderSize = 0;
-            this.BtnAgregar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.BtnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnAgregar.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnAgregar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.BtnAgregar.Location = new System.Drawing.Point(12, 454);
-            this.BtnAgregar.Name = "BtnAgregar";
-            this.BtnAgregar.Size = new System.Drawing.Size(197, 40);
-            this.BtnAgregar.TabIndex = 2;
-            this.BtnAgregar.Text = "Consultar";
-            this.BtnAgregar.UseVisualStyleBackColor = false;
+            this.BtnConsultar.BackColor = System.Drawing.Color.DimGray;
+            this.BtnConsultar.FlatAppearance.BorderSize = 0;
+            this.BtnConsultar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.BtnConsultar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnConsultar.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnConsultar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.BtnConsultar.Location = new System.Drawing.Point(12, 454);
+            this.BtnConsultar.Name = "BtnConsultar";
+            this.BtnConsultar.Size = new System.Drawing.Size(197, 40);
+            this.BtnConsultar.TabIndex = 2;
+            this.BtnConsultar.Text = "Consultar";
+            this.BtnConsultar.UseVisualStyleBackColor = false;
             // 
             // DGVPermisos
             // 
@@ -82,12 +82,12 @@
             this.DGVPermisos.TabIndex = 9;
             this.DGVPermisos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVPermisos_CellContentClick);
             // 
-            // textBox1
+            // txt_rut_permisos
             // 
-            this.textBox1.Location = new System.Drawing.Point(100, 56);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 8;
+            this.txt_rut_permisos.Location = new System.Drawing.Point(100, 56);
+            this.txt_rut_permisos.Name = "txt_rut_permisos";
+            this.txt_rut_permisos.Size = new System.Drawing.Size(100, 20);
+            this.txt_rut_permisos.TabIndex = 8;
             // 
             // label3
             // 
@@ -107,9 +107,9 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
             this.ClientSize = new System.Drawing.Size(936, 506);
             this.Controls.Add(this.DGVPermisos);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txt_rut_permisos);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.BtnAgregar);
+            this.Controls.Add(this.BtnConsultar);
             this.Controls.Add(this.panelTitulo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormPermisosIngresados";
@@ -126,9 +126,9 @@
 
         private System.Windows.Forms.Panel panelTitulo;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button BtnAgregar;
+        private System.Windows.Forms.Button BtnConsultar;
         public System.Windows.Forms.DataGridView DGVPermisos;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txt_rut_permisos;
         private System.Windows.Forms.Label label3;
     }
 }
