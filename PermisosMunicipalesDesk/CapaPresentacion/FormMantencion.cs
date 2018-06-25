@@ -51,13 +51,26 @@ namespace CapaPresentacion
         public void TabPageUnidades_Click(object sender, EventArgs e)
         {
         }
+
+        private void AbrirSubFormInPanel(object Formhijohijo)
+        {
+            if (this.panel2.Controls.Count > 0)
+                this.panel2.Controls.RemoveAt(0);
+            Form ff = Formhijohijo as Form;
+            ff.TopLevel = false;
+            ff.Dock = DockStyle.Fill;
+            this.panel2.Controls.Add(ff);
+            this.panel2.Tag = ff;
+            ff.Show();
+
+        }
         //desde aqui hacia abajo, las funciones correctas  
-        private void btnTipos_Click(object sender, EventArgs e) //llamar al formulario de tipos
+        private void btnTipos_Click_1(object sender, EventArgs e) //llamar al formulario de tipos
         {
 
             
             FormMantencionesTipos MT = new FormMantencionesTipos();
-            AbrirFormInPanel(MT);
+            AbrirSubFormInPanel(MT);
             CDconexion Cont = new CDconexion();
             Ora = Cont.AbrirConexion();
             OracleCommand cmdt = new OracleCommand("SP_CARGAR_TIPO_PERMISO", Ora); 
@@ -71,10 +84,10 @@ namespace CapaPresentacion
             Console.WriteLine("Status: " + Cont.CerrarConexion());
         }
 
-        private void btnMotivos_Click(object sender, EventArgs e)//llamar al formulario de Motivos
+        private void btnMotivos_Click_1(object sender, EventArgs e)//llamar al formulario de Motivos
         {
             FormMantencionesMotivos MM = new FormMantencionesMotivos();
-            //AbrirFormInPanel(MM);
+            AbrirSubFormInPanel(MM);
             CDconexion Conm = new CDconexion();
             Ora = Conm.AbrirConexion();
             OracleCommand cmdm = new OracleCommand("SP_CARGAR_MOTIVOS", Ora); 
@@ -91,7 +104,7 @@ namespace CapaPresentacion
         private void btnUnidades_Click(object sender, EventArgs e)//llamar al formulario de Unidades
         {
             FormMantencionesUnidades MU = new FormMantencionesUnidades();
-            //AbrirFormInPanel(MU);
+            AbrirSubFormInPanel(MU);
             CDconexion Conu = new CDconexion();
             Ora = Conu.AbrirConexion();
             OracleCommand cmdu = new OracleCommand("SP_CARGAR_UNIDADES", Ora); 

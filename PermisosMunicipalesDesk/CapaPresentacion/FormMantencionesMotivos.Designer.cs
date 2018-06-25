@@ -145,7 +145,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Location = new System.Drawing.Point(12, 118);
+            this.Location = new System.Drawing.Point(12, 73);
             this.Name = "FormMantencionesMotivos";
             this.Text = "FormMantencionesMotivos";
             ((System.ComponentModel.ISupportInitialize)(this.dgvMotivos)).EndInit();
