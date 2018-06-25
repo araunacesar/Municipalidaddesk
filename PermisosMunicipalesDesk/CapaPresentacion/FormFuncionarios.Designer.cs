@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormFuncionarios));
             this.BtnAgregar = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.FFRefresh = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -80,20 +80,21 @@
             this.BtnAgregar.Text = "Agregar";
             this.BtnAgregar.UseVisualStyleBackColor = false;
             // 
-            // button1
+            // FFRefresh
             // 
-            this.button1.BackColor = System.Drawing.Color.DimGray;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button1.Location = new System.Drawing.Point(366, 454);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(197, 40);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Actualizar";
-            this.button1.UseVisualStyleBackColor = false;
+            this.FFRefresh.BackColor = System.Drawing.Color.DimGray;
+            this.FFRefresh.FlatAppearance.BorderSize = 0;
+            this.FFRefresh.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.FFRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.FFRefresh.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FFRefresh.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.FFRefresh.Location = new System.Drawing.Point(366, 454);
+            this.FFRefresh.Name = "FFRefresh";
+            this.FFRefresh.Size = new System.Drawing.Size(197, 40);
+            this.FFRefresh.TabIndex = 2;
+            this.FFRefresh.Text = "Actualizar";
+            this.FFRefresh.UseVisualStyleBackColor = false;
+            this.FFRefresh.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -423,7 +424,7 @@
             this.Controls.Add(this.txtrut);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.FFRefresh);
             this.Controls.Add(this.BtnAgregar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormFuncionarios";
@@ -441,7 +442,7 @@
         #endregion
 
         private System.Windows.Forms.Button BtnAgregar;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button FFRefresh;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
