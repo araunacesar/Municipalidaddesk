@@ -102,7 +102,7 @@ namespace Administrador_Municipalidad
 
         }
 
-        private void AbrirFormInPanel(object Formhijo)
+        public void AbrirFormInPanel(object Formhijo)
         {
             if (this.PanelContenedor.Controls.Count > 0)
                 this.PanelContenedor.Controls.RemoveAt(0);
@@ -136,19 +136,8 @@ namespace Administrador_Municipalidad
         private void BtnMantencion_Click(object sender, EventArgs e) //BOTON MANTENCION
         {
             //Mantencion de Tipos
-            FormMantencion FMT = new FormMantencion();
-            AbrirFormInPanel(FMT);
-            CDconexion Cont = new CDconexion();
-            Ora = Cont.AbrirConexion();
-            OracleCommand cmdt = new OracleCommand("SP_ListarTipoPermiso ", Ora); //crear este procedimiento
-            cmdt.CommandType = System.Data.CommandType.StoredProcedure;
-            cmdt.Parameters.Add("registros", OracleType.Cursor).Direction = ParameterDirection.Output;
-            OracleDataAdapter odat = new OracleDataAdapter();
-            odat.SelectCommand = cmdt;
-            DataTable listat = new DataTable();
-            odat.Fill(listat);
-            FMT.dgvTipos.DataSource = listat;
-            Console.WriteLine("Status: " + Cont.CerrarConexion());
+            FormMantencion FM = new FormMantencion();
+            AbrirFormInPanel(FM);
         }
 
         private void BtnPermisos_Click(object sender, EventArgs e) //BOTON PERMISOS

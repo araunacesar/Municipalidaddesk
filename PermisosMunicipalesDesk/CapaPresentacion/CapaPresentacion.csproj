@@ -78,6 +78,24 @@
     <Compile Include="FormMantencion.Designer.cs">
       <DependentUpon>FormMantencion.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormMantencionesMotivos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMantencionesMotivos.Designer.cs">
+      <DependentUpon>FormMantencionesMotivos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMantencionesTipos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMantencionesTipos.Designer.cs">
+      <DependentUpon>FormMantencionesTipos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMantencionesUnidades.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMantencionesUnidades.Designer.cs">
+      <DependentUpon>FormMantencionesUnidades.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormPermisosIngresados.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -106,6 +124,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormMantencion.resx">
       <DependentUpon>FormMantencion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMantencionesMotivos.resx">
+      <DependentUpon>FormMantencionesMotivos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMantencionesTipos.resx">
+      <DependentUpon>FormMantencionesTipos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMantencionesUnidades.resx">
+      <DependentUpon>FormMantencionesUnidades.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormPermisosIngresados.resx">
       <DependentUpon>FormPermisosIngresados.cs</DependentUpon>

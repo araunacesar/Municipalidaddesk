@@ -19,6 +19,7 @@ namespace CapaPresentacion
     {
         private CDconexion conn { get; }
         private OracleConnection Ora = new OracleConnection();
+        
         public FormMantencion()
         {
             InitializeComponent();
@@ -31,56 +32,82 @@ namespace CapaPresentacion
 
         public void dgvMotivos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+           
+        }
+
+        public void dgvUnidades_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+        }
+
+        public void TabPageTipos_Click(object sender, EventArgs e)
+        {
+        }
+
+        public void TabPageMotivos_Click(object sender, EventArgs e)
+        {
+        }
+
+        public void TabPageUnidades_Click(object sender, EventArgs e)
+        {
+        }
+        //desde aqui hacia abajo, las funciones correctas  
+        private void btnTipos_Click(object sender, EventArgs e) //llamar al formulario de tipos
+        {
+
+            
+            FormMantencionesTipos MT = new FormMantencionesTipos();
+            AbrirFormInPanel(MT);
+            CDconexion Cont = new CDconexion();
+            Ora = Cont.AbrirConexion();
+            OracleCommand cmdt = new OracleCommand("SP_CARGAR_TIPO_PERMISO", Ora); 
+            cmdt.CommandType = System.Data.CommandType.StoredProcedure;
+            cmdt.Parameters.Add("registros", OracleType.Cursor).Direction = ParameterDirection.Output;
+            OracleDataAdapter odat = new OracleDataAdapter();
+            odat.SelectCommand = cmdt;
+            DataTable listat = new DataTable();
+            odat.Fill(listat);
+            MT.dgvTipos.DataSource = listat;
+            Console.WriteLine("Status: " + Cont.CerrarConexion());
+        }
+
+        private void btnMotivos_Click(object sender, EventArgs e)//llamar al formulario de Motivos
+        {
+            FormMantencionesMotivos MM = new FormMantencionesMotivos();
+            //AbrirFormInPanel(MM);
             CDconexion Conm = new CDconexion();
             Ora = Conm.AbrirConexion();
-            OracleCommand cmdm = new OracleCommand("SP_ListarTipoPermiso ", Ora); //crear este procedimiento
+            OracleCommand cmdm = new OracleCommand("SP_CARGAR_MOTIVOS", Ora); 
             cmdm.CommandType = System.Data.CommandType.StoredProcedure;
             cmdm.Parameters.Add("registros", OracleType.Cursor).Direction = ParameterDirection.Output;
             OracleDataAdapter odam = new OracleDataAdapter();
             odam.SelectCommand = cmdm;
             DataTable listam = new DataTable();
             odam.Fill(listam);
-            dgvMotivos.DataSource = listam;
+            MM.dgvMotivos.DataSource = listam;
             Console.WriteLine("Status: " + Conm.CerrarConexion());
         }
 
-        public void dgvUnidades_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void btnUnidades_Click(object sender, EventArgs e)//llamar al formulario de Unidades
         {
+            FormMantencionesUnidades MU = new FormMantencionesUnidades();
+            //AbrirFormInPanel(MU);
             CDconexion Conu = new CDconexion();
             Ora = Conu.AbrirConexion();
-            OracleCommand cmdu = new OracleCommand("SP_ListarTipoPermiso ", Ora); //crear este procedimiento
+            OracleCommand cmdu = new OracleCommand("SP_CARGAR_UNIDADES", Ora); 
             cmdu.CommandType = System.Data.CommandType.StoredProcedure;
             cmdu.Parameters.Add("registros", OracleType.Cursor).Direction = ParameterDirection.Output;
             OracleDataAdapter odau = new OracleDataAdapter();
             odau.SelectCommand = cmdu;
             DataTable listau = new DataTable();
             odau.Fill(listau);
-            dgvUnidades.DataSource = listau;
+            MU.dgvUnidad.DataSource = listau;
             Console.WriteLine("Status: " + Conu.CerrarConexion());
         }
 
-        public void TabPageTipos_Click(object sender, EventArgs e)
+        public void groupBox1_Enter(object sender, EventArgs e)
         {
 
-        }
-
-        public void TabPageMotivos_Click(object sender, EventArgs e)
-        {
-            // Mantencion de Motivos
-            
-            //FormMantencion FMM = new FormMantencion();
-            //AbrirFormInPanel(FMM);
-            
-                    }
-
-        public void TabPageUnidades_Click(object sender, EventArgs e)
-        {
-            //Mantencion de Unidades
-            
-            //FormMantencion FMU = new FormMantencion();
-            //AbrirFormInPanel(FMU);
-           
-           
         }
     }
 }
