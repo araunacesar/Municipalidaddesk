@@ -67,9 +67,11 @@ namespace CapaPresentacion
         //desde aqui hacia abajo, las funciones correctas  
         private void btnTipos_Click(object sender, EventArgs e) //llamar al formulario de tipos
         {
+
             
             panel2.Controls.Clear();
             FormMantencionesTipos MT = new FormMantencionesTipos();
+            label2.Text = ("Mantencion de Tipos"); 
             MT.TopLevel = false;
             panel2.Controls.Add(MT);
             AbrirSubFormInPanel(MT);
@@ -90,6 +92,7 @@ namespace CapaPresentacion
         {
             panel2.Controls.Clear();
             FormMantencionesMotivos MM = new FormMantencionesMotivos();
+            label2.Text = ("Mantencion de Motivos");
             MM.TopLevel = false;
             panel2.Controls.Add(MM);
             AbrirSubFormInPanel(MM);
@@ -110,6 +113,7 @@ namespace CapaPresentacion
         {
             panel2.Controls.Clear();
             FormMantencionesUnidades MU = new FormMantencionesUnidades();
+            label2.Text = ("Mantencion de Unidades");
             MU.TopLevel = false;
             panel2.Controls.Add(MU);
             AbrirSubFormInPanel(MU);
@@ -131,6 +135,14 @@ namespace CapaPresentacion
 
         }
 
-        
+        private void FormMantencion_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        public void label2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

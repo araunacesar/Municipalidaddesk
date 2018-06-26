@@ -21,5 +21,10 @@ namespace CapaPresentacion
         {
 
         }
+
+        private void FormDescargas_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -30,13 +30,16 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.BtnVerificar = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.DGVverificacion = new System.Windows.Forms.DataGridView();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtVerificarPermisos = new System.Windows.Forms.TextBox();
+            this.BtnVerificarPermisos = new System.Windows.Forms.Button();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.dgvverificaciones = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DGVverificacion)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvverificaciones)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -59,21 +62,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Verificación de Permisos";
             // 
-            // BtnVerificar
-            // 
-            this.BtnVerificar.BackColor = System.Drawing.Color.DimGray;
-            this.BtnVerificar.FlatAppearance.BorderSize = 0;
-            this.BtnVerificar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.BtnVerificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnVerificar.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnVerificar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.BtnVerificar.Location = new System.Drawing.Point(12, 454);
-            this.BtnVerificar.Name = "BtnVerificar";
-            this.BtnVerificar.Size = new System.Drawing.Size(197, 40);
-            this.BtnVerificar.TabIndex = 2;
-            this.BtnVerificar.Text = "Verificar";
-            this.BtnVerificar.UseVisualStyleBackColor = false;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -83,32 +71,60 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "label2";
             // 
-            // label3
+            // groupBox1
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label3.Location = new System.Drawing.Point(13, 56);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(80, 15);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Ingresa el rut";
+            this.groupBox1.Controls.Add(this.BtnVerificarPermisos);
+            this.groupBox1.Controls.Add(this.txtVerificarPermisos);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.groupBox1.Location = new System.Drawing.Point(12, 46);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(904, 130);
+            this.groupBox1.TabIndex = 7;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Ingresa el rut a consultar";
             // 
-            // textBox1
+            // txtVerificarPermisos
             // 
-            this.textBox1.Location = new System.Drawing.Point(100, 56);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 5;
+            this.txtVerificarPermisos.Location = new System.Drawing.Point(15, 55);
+            this.txtVerificarPermisos.Name = "txtVerificarPermisos";
+            this.txtVerificarPermisos.Size = new System.Drawing.Size(100, 21);
+            this.txtVerificarPermisos.TabIndex = 6;
             // 
-            // DGVverificacion
+            // BtnVerificarPermisos
             // 
-            this.DGVverificacion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGVverificacion.Location = new System.Drawing.Point(12, 82);
-            this.DGVverificacion.Name = "DGVverificacion";
-            this.DGVverificacion.Size = new System.Drawing.Size(908, 366);
-            this.DGVverificacion.TabIndex = 6;
-            this.DGVverificacion.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVverificacion_CellContentClick);
+            this.BtnVerificarPermisos.BackColor = System.Drawing.Color.DimGray;
+            this.BtnVerificarPermisos.FlatAppearance.BorderSize = 0;
+            this.BtnVerificarPermisos.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.BtnVerificarPermisos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnVerificarPermisos.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnVerificarPermisos.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.BtnVerificarPermisos.Location = new System.Drawing.Point(690, 55);
+            this.BtnVerificarPermisos.Name = "BtnVerificarPermisos";
+            this.BtnVerificarPermisos.Size = new System.Drawing.Size(197, 40);
+            this.BtnVerificarPermisos.TabIndex = 7;
+            this.BtnVerificarPermisos.Text = "Consultar";
+            this.BtnVerificarPermisos.UseVisualStyleBackColor = false;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.dgvverificaciones);
+            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.groupBox2.Location = new System.Drawing.Point(12, 190);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(904, 304);
+            this.groupBox2.TabIndex = 8;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Estado de los Permisos";
+            // 
+            // dgvverificaciones
+            // 
+            this.dgvverificaciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvverificaciones.Location = new System.Drawing.Point(15, 34);
+            this.dgvverificaciones.Name = "dgvverificaciones";
+            this.dgvverificaciones.Size = new System.Drawing.Size(872, 165);
+            this.dgvverificaciones.TabIndex = 7;
             // 
             // FormVerificaciones
             // 
@@ -116,18 +132,19 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
             this.ClientSize = new System.Drawing.Size(936, 506);
-            this.Controls.Add(this.DGVverificacion);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.BtnVerificar);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormVerificaciones";
             this.Text = "FormVerificaciones";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DGVverificacion)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvverificaciones)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -137,10 +154,11 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button BtnVerificar;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
-        public System.Windows.Forms.DataGridView DGVverificacion;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button BtnVerificarPermisos;
+        private System.Windows.Forms.TextBox txtVerificarPermisos;
+        private System.Windows.Forms.GroupBox groupBox2;
+        public System.Windows.Forms.DataGridView dgvverificaciones;
     }
 }

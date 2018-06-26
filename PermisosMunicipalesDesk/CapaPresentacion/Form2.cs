@@ -153,7 +153,7 @@ namespace Administrador_Municipalidad
             oda.SelectCommand = cmd;
             DataTable lista = new DataTable();
             oda.Fill(lista);
-            FPI.DGVPermisos.DataSource = lista;
+            FPI.dgvPermisos.DataSource = lista;
             Console.WriteLine("Status: " + Conn.CerrarConexion());
         }
 
@@ -170,7 +170,7 @@ namespace Administrador_Municipalidad
             oda.SelectCommand = cmd;
             DataTable lista = new DataTable();
             oda.Fill(lista);
-            FV.DGVverificacion.DataSource = lista;
+            FV.dgvverificaciones.DataSource = lista;
             Console.WriteLine("Status: " + Conn.CerrarConexion());
         }
 
@@ -197,6 +197,7 @@ namespace Administrador_Municipalidad
             this.Close();
             Form1 ss = new Form1();
             ss.Show();
+            
         }
 
         private void lblName_Click(object sender, EventArgs e)
