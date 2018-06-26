@@ -16,7 +16,8 @@ namespace CapaPresentacion
 {
     public partial class FormFuncionarios : Form
     {
-        private CDconexion conn { get; }
+        CDconexion Conn = new CDconexion();
+        OracleCommand cmd;
         private OracleConnection Ora = new OracleConnection();
         public FormFuncionarios()
         {
@@ -32,9 +33,9 @@ namespace CapaPresentacion
 
         private void button1_Click(object sender, EventArgs e)
         {
-            CDconexion Conn = new CDconexion();
+            
             Ora = Conn.AbrirConexion();
-            OracleCommand cmd = new OracleCommand("SP_ListarPersonal", Ora);
+            cmd = new OracleCommand("SP_ListarPersonal", Ora);
             cmd.CommandType = System.Data.CommandType.StoredProcedure;
             cmd.Parameters.Add("registros", OracleType.Cursor).Direction = ParameterDirection.Output;
             OracleDataAdapter oda = new OracleDataAdapter();
@@ -43,6 +44,27 @@ namespace CapaPresentacion
             oda.Fill(lista);
             DGVListarPersonal.DataSource = lista;
             Console.WriteLine("Status: " + Conn.CerrarConexion());
+        }
+
+        private void BtnAgregar_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void EliminarBtn_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtrut.Text))
+            {
+                MessageBox.Show("Debes ingresar un Rut");
+            }else
+            {
+                Ora = Conn.AbrirConexion();
+                cmd = new OracleCommand("SP_EliminarPersonal", Ora);
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.Parameters.Add("id", OracleType.VarChar).Value = txtrut.Text;
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Usuario Eliminado");
+            }
         }
     }
 }

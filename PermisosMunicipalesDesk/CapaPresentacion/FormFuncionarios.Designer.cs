@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormFuncionarios));
             this.BtnAgregar = new System.Windows.Forms.Button();
             this.FFRefresh = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.EliminarBtn = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -79,6 +79,7 @@
             this.BtnAgregar.TabIndex = 1;
             this.BtnAgregar.Text = "Agregar";
             this.BtnAgregar.UseVisualStyleBackColor = false;
+            this.BtnAgregar.Click += new System.EventHandler(this.BtnAgregar_Click);
             // 
             // FFRefresh
             // 
@@ -96,20 +97,21 @@
             this.FFRefresh.UseVisualStyleBackColor = false;
             this.FFRefresh.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button2
+            // EliminarBtn
             // 
-            this.button2.BackColor = System.Drawing.Color.DimGray;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button2.Location = new System.Drawing.Point(581, 454);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(197, 40);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Eliminar";
-            this.button2.UseVisualStyleBackColor = false;
+            this.EliminarBtn.BackColor = System.Drawing.Color.DimGray;
+            this.EliminarBtn.FlatAppearance.BorderSize = 0;
+            this.EliminarBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.EliminarBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.EliminarBtn.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EliminarBtn.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.EliminarBtn.Location = new System.Drawing.Point(581, 454);
+            this.EliminarBtn.Name = "EliminarBtn";
+            this.EliminarBtn.Size = new System.Drawing.Size(197, 40);
+            this.EliminarBtn.TabIndex = 3;
+            this.EliminarBtn.Text = "Eliminar";
+            this.EliminarBtn.UseVisualStyleBackColor = false;
+            this.EliminarBtn.Click += new System.EventHandler(this.EliminarBtn_Click);
             // 
             // panel1
             // 
@@ -423,7 +425,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtrut);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.EliminarBtn);
             this.Controls.Add(this.FFRefresh);
             this.Controls.Add(this.BtnAgregar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -443,7 +445,7 @@
 
         private System.Windows.Forms.Button BtnAgregar;
         private System.Windows.Forms.Button FFRefresh;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button EliminarBtn;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
