@@ -31,13 +31,12 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnUnidades = new System.Windows.Forms.Button();
             this.btnMotivos = new System.Windows.Forms.Button();
             this.btnTipos = new System.Windows.Forms.Button();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -63,13 +62,22 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.groupBox2);
-            this.panel2.Controls.Add(this.groupBox1);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(0, 40);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel2.Location = new System.Drawing.Point(0, 142);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(936, 466);
+            this.panel2.Size = new System.Drawing.Size(936, 364);
             this.panel2.TabIndex = 9;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.label2.Location = new System.Drawing.Point(9, 112);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(87, 16);
+            this.label2.TabIndex = 12;
+            this.label2.Text = "Mantencion";
             // 
             // groupBox1
             // 
@@ -77,10 +85,10 @@
             this.groupBox1.Controls.Add(this.btnMotivos);
             this.groupBox1.Controls.Add(this.btnTipos);
             this.groupBox1.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.groupBox1.Location = new System.Drawing.Point(12, 6);
+            this.groupBox1.Location = new System.Drawing.Point(12, 46);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(912, 60);
-            this.groupBox1.TabIndex = 9;
+            this.groupBox1.TabIndex = 11;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Selectiona el tipo de mantención";
             // 
@@ -98,7 +106,7 @@
             this.btnUnidades.TabIndex = 15;
             this.btnUnidades.Text = "Mantención de Unidades";
             this.btnUnidades.UseVisualStyleBackColor = false;
-            this.btnUnidades.Click += new System.EventHandler(this.btnUnidades_Click);
+            this.btnUnidades.Click += new System.EventHandler(this.btnUnidades_Click_1);
             // 
             // btnMotivos
             // 
@@ -114,7 +122,7 @@
             this.btnMotivos.TabIndex = 14;
             this.btnMotivos.Text = "Mantención de Motivos";
             this.btnMotivos.UseVisualStyleBackColor = false;
-            this.btnMotivos.Click += new System.EventHandler(this.btnMotivos_Click_1);
+            this.btnMotivos.Click += new System.EventHandler(this.btnMotivos_Click);
             // 
             // btnTipos
             // 
@@ -130,18 +138,7 @@
             this.btnTipos.TabIndex = 13;
             this.btnTipos.Text = "Mantención de Tipos";
             this.btnTipos.UseVisualStyleBackColor = false;
-            this.btnTipos.Click += new System.EventHandler(this.btnTipos_Click_1);
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.groupBox2.Location = new System.Drawing.Point(12, 73);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(912, 381);
-            this.groupBox2.TabIndex = 10;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Mantenciones";
+            this.btnTipos.Click += new System.EventHandler(this.btnTipos_Click);
             // 
             // FormMantencion
             // 
@@ -149,6 +146,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlText;
             this.ClientSize = new System.Drawing.Size(936, 506);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -156,9 +155,9 @@
             this.Text = "FormMantencion";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -167,7 +166,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Label label2;
         public System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnUnidades;
         private System.Windows.Forms.Button btnMotivos;

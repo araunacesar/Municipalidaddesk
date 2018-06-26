@@ -45,7 +45,7 @@
             this.btnEliminarUnidad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminarUnidad.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminarUnidad.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnEliminarUnidad.Location = new System.Drawing.Point(703, 331);
+            this.btnEliminarUnidad.Location = new System.Drawing.Point(703, 300);
             this.btnEliminarUnidad.Name = "btnEliminarUnidad";
             this.btnEliminarUnidad.Size = new System.Drawing.Size(197, 27);
             this.btnEliminarUnidad.TabIndex = 24;
@@ -60,7 +60,7 @@
             this.btnActualizarUnidad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnActualizarUnidad.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnActualizarUnidad.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnActualizarUnidad.Location = new System.Drawing.Point(500, 331);
+            this.btnActualizarUnidad.Location = new System.Drawing.Point(500, 300);
             this.btnActualizarUnidad.Name = "btnActualizarUnidad";
             this.btnActualizarUnidad.Size = new System.Drawing.Size(197, 27);
             this.btnActualizarUnidad.TabIndex = 23;
@@ -75,7 +75,7 @@
             this.btnGuardarMotivo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardarMotivo.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardarMotivo.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnGuardarMotivo.Location = new System.Drawing.Point(297, 331);
+            this.btnGuardarMotivo.Location = new System.Drawing.Point(297, 300);
             this.btnGuardarMotivo.Name = "btnGuardarMotivo";
             this.btnGuardarMotivo.Size = new System.Drawing.Size(197, 27);
             this.btnGuardarMotivo.TabIndex = 22;
@@ -87,7 +87,7 @@
             this.dgvUnidad.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvUnidad.Location = new System.Drawing.Point(297, 12);
             this.dgvUnidad.Name = "dgvUnidad";
-            this.dgvUnidad.Size = new System.Drawing.Size(603, 313);
+            this.dgvUnidad.Size = new System.Drawing.Size(603, 282);
             this.dgvUnidad.TabIndex = 20;
             this.dgvUnidad.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUnidad_CellContentClick);
             // 
@@ -95,7 +95,7 @@
             // 
             this.textBox1.Location = new System.Drawing.Point(15, 51);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.Size = new System.Drawing.Size(122, 20);
             this.textBox1.TabIndex = 19;
             // 
             // label2
@@ -114,7 +114,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlText;
-            this.ClientSize = new System.Drawing.Size(912, 370);
+            this.ClientSize = new System.Drawing.Size(936, 364);
             this.Controls.Add(this.btnEliminarUnidad);
             this.Controls.Add(this.btnActualizarUnidad);
             this.Controls.Add(this.btnGuardarMotivo);

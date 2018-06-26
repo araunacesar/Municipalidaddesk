@@ -63,7 +63,7 @@
             // 
             this.txtIdMotivos.Location = new System.Drawing.Point(15, 51);
             this.txtIdMotivos.Name = "txtIdMotivos";
-            this.txtIdMotivos.Size = new System.Drawing.Size(100, 20);
+            this.txtIdMotivos.Size = new System.Drawing.Size(122, 20);
             this.txtIdMotivos.TabIndex = 2;
             // 
             // dgvMotivos
@@ -71,7 +71,7 @@
             this.dgvMotivos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMotivos.Location = new System.Drawing.Point(297, 12);
             this.dgvMotivos.Name = "dgvMotivos";
-            this.dgvMotivos.Size = new System.Drawing.Size(603, 313);
+            this.dgvMotivos.Size = new System.Drawing.Size(603, 282);
             this.dgvMotivos.TabIndex = 3;
             this.dgvMotivos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMotivos_CellContentClick);
             // 
@@ -83,7 +83,7 @@
             this.btnGuardarMotivo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardarMotivo.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardarMotivo.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnGuardarMotivo.Location = new System.Drawing.Point(297, 331);
+            this.btnGuardarMotivo.Location = new System.Drawing.Point(297, 300);
             this.btnGuardarMotivo.Name = "btnGuardarMotivo";
             this.btnGuardarMotivo.Size = new System.Drawing.Size(197, 27);
             this.btnGuardarMotivo.TabIndex = 15;
@@ -98,7 +98,7 @@
             this.btnActualizarMotivo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnActualizarMotivo.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnActualizarMotivo.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnActualizarMotivo.Location = new System.Drawing.Point(500, 331);
+            this.btnActualizarMotivo.Location = new System.Drawing.Point(500, 300);
             this.btnActualizarMotivo.Name = "btnActualizarMotivo";
             this.btnActualizarMotivo.Size = new System.Drawing.Size(197, 27);
             this.btnActualizarMotivo.TabIndex = 16;
@@ -113,7 +113,7 @@
             this.btnEliminarMotivo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminarMotivo.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminarMotivo.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnEliminarMotivo.Location = new System.Drawing.Point(703, 331);
+            this.btnEliminarMotivo.Location = new System.Drawing.Point(703, 300);
             this.btnEliminarMotivo.Name = "btnEliminarMotivo";
             this.btnEliminarMotivo.Size = new System.Drawing.Size(197, 27);
             this.btnEliminarMotivo.TabIndex = 17;
@@ -135,7 +135,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlText;
-            this.ClientSize = new System.Drawing.Size(912, 370);
+            this.ClientSize = new System.Drawing.Size(936, 364);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnEliminarMotivo);
             this.Controls.Add(this.btnActualizarMotivo);
@@ -145,7 +145,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Location = new System.Drawing.Point(12, 73);
+            this.Location = new System.Drawing.Point(0, 40);
             this.Name = "FormMantencionesMotivos";
             this.Text = "FormMantencionesMotivos";
             ((System.ComponentModel.ISupportInitialize)(this.dgvMotivos)).EndInit();

@@ -65,11 +65,13 @@ namespace CapaPresentacion
 
         }
         //desde aqui hacia abajo, las funciones correctas  
-        private void btnTipos_Click_1(object sender, EventArgs e) //llamar al formulario de tipos
+        private void btnTipos_Click(object sender, EventArgs e) //llamar al formulario de tipos
         {
-
             
+            panel2.Controls.Clear();
             FormMantencionesTipos MT = new FormMantencionesTipos();
+            MT.TopLevel = false;
+            panel2.Controls.Add(MT);
             AbrirSubFormInPanel(MT);
             CDconexion Cont = new CDconexion();
             Ora = Cont.AbrirConexion();
@@ -84,9 +86,12 @@ namespace CapaPresentacion
             Console.WriteLine("Status: " + Cont.CerrarConexion());
         }
 
-        private void btnMotivos_Click_1(object sender, EventArgs e)//llamar al formulario de Motivos
+        private void btnMotivos_Click(object sender, EventArgs e)//llamar al formulario de Motivos
         {
+            panel2.Controls.Clear();
             FormMantencionesMotivos MM = new FormMantencionesMotivos();
+            MM.TopLevel = false;
+            panel2.Controls.Add(MM);
             AbrirSubFormInPanel(MM);
             CDconexion Conm = new CDconexion();
             Ora = Conm.AbrirConexion();
@@ -101,9 +106,12 @@ namespace CapaPresentacion
             Console.WriteLine("Status: " + Conm.CerrarConexion());
         }
 
-        private void btnUnidades_Click(object sender, EventArgs e)//llamar al formulario de Unidades
+        private void btnUnidades_Click_1(object sender, EventArgs e)//llamar al formulario de Unidades
         {
+            panel2.Controls.Clear();
             FormMantencionesUnidades MU = new FormMantencionesUnidades();
+            MU.TopLevel = false;
+            panel2.Controls.Add(MU);
             AbrirSubFormInPanel(MU);
             CDconexion Conu = new CDconexion();
             Ora = Conu.AbrirConexion();
@@ -122,5 +130,7 @@ namespace CapaPresentacion
         {
 
         }
+
+        
     }
 }

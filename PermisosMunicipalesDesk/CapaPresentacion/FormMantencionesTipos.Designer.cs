@@ -52,7 +52,7 @@
             // 
             this.textBox1.Location = new System.Drawing.Point(15, 51);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.Size = new System.Drawing.Size(122, 20);
             this.textBox1.TabIndex = 19;
             // 
             // dgvTipos
@@ -60,7 +60,7 @@
             this.dgvTipos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTipos.Location = new System.Drawing.Point(297, 12);
             this.dgvTipos.Name = "dgvTipos";
-            this.dgvTipos.Size = new System.Drawing.Size(603, 313);
+            this.dgvTipos.Size = new System.Drawing.Size(603, 282);
             this.dgvTipos.TabIndex = 20;
             this.dgvTipos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTipos_CellContentClick);
             // 
@@ -72,7 +72,7 @@
             this.btnEliminarTipos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminarTipos.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminarTipos.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnEliminarTipos.Location = new System.Drawing.Point(703, 331);
+            this.btnEliminarTipos.Location = new System.Drawing.Point(703, 300);
             this.btnEliminarTipos.Name = "btnEliminarTipos";
             this.btnEliminarTipos.Size = new System.Drawing.Size(197, 27);
             this.btnEliminarTipos.TabIndex = 24;
@@ -87,7 +87,7 @@
             this.btnGuardarTipos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardarTipos.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardarTipos.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnGuardarTipos.Location = new System.Drawing.Point(297, 331);
+            this.btnGuardarTipos.Location = new System.Drawing.Point(297, 300);
             this.btnGuardarTipos.Name = "btnGuardarTipos";
             this.btnGuardarTipos.Size = new System.Drawing.Size(197, 27);
             this.btnGuardarTipos.TabIndex = 22;
@@ -102,7 +102,7 @@
             this.btnActualizarTipos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnActualizarTipos.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnActualizarTipos.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnActualizarTipos.Location = new System.Drawing.Point(500, 331);
+            this.btnActualizarTipos.Location = new System.Drawing.Point(500, 300);
             this.btnActualizarTipos.Name = "btnActualizarTipos";
             this.btnActualizarTipos.Size = new System.Drawing.Size(197, 27);
             this.btnActualizarTipos.TabIndex = 23;
@@ -114,7 +114,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlText;
-            this.ClientSize = new System.Drawing.Size(912, 370);
+            this.ClientSize = new System.Drawing.Size(936, 364);
             this.Controls.Add(this.btnEliminarTipos);
             this.Controls.Add(this.btnActualizarTipos);
             this.Controls.Add(this.btnGuardarTipos);
