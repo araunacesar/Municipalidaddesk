@@ -37,25 +37,25 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtrut = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtnom = new System.Windows.Forms.TextBox();
+            this.txtapp = new System.Windows.Forms.TextBox();
+            this.txtapm = new System.Windows.Forms.TextBox();
             this.dtpFecha_Contrato = new System.Windows.Forms.DateTimePicker();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtmail = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.cbsex = new System.Windows.Forms.ComboBox();
+            this.txtuser = new System.Windows.Forms.TextBox();
+            this.txtpass = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.cbtipouser = new System.Windows.Forms.ComboBox();
+            this.cbcargo = new System.Windows.Forms.ComboBox();
+            this.cbdepto = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
@@ -163,26 +163,26 @@
             this.label2.TabIndex = 8;
             this.label2.Text = "Rut";
             // 
-            // textBox1
+            // txtnom
             // 
-            this.textBox1.Location = new System.Drawing.Point(149, 63);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(159, 20);
-            this.textBox1.TabIndex = 9;
+            this.txtnom.Location = new System.Drawing.Point(149, 63);
+            this.txtnom.Name = "txtnom";
+            this.txtnom.Size = new System.Drawing.Size(159, 20);
+            this.txtnom.TabIndex = 9;
             // 
-            // textBox2
+            // txtapp
             // 
-            this.textBox2.Location = new System.Drawing.Point(314, 63);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(124, 20);
-            this.textBox2.TabIndex = 10;
+            this.txtapp.Location = new System.Drawing.Point(314, 63);
+            this.txtapp.Name = "txtapp";
+            this.txtapp.Size = new System.Drawing.Size(124, 20);
+            this.txtapp.TabIndex = 10;
             // 
-            // textBox3
+            // txtapm
             // 
-            this.textBox3.Location = new System.Drawing.Point(444, 63);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(118, 20);
-            this.textBox3.TabIndex = 11;
+            this.txtapm.Location = new System.Drawing.Point(444, 63);
+            this.txtapm.Name = "txtapm";
+            this.txtapm.Size = new System.Drawing.Size(118, 20);
+            this.txtapm.TabIndex = 11;
             // 
             // dtpFecha_Contrato
             // 
@@ -192,12 +192,12 @@
             this.dtpFecha_Contrato.TabIndex = 12;
             this.dtpFecha_Contrato.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
-            // textBox4
+            // txtmail
             // 
-            this.textBox4.Location = new System.Drawing.Point(25, 110);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(197, 20);
-            this.textBox4.TabIndex = 13;
+            this.txtmail.Location = new System.Drawing.Point(25, 110);
+            this.txtmail.Name = "txtmail";
+            this.txtmail.Size = new System.Drawing.Size(197, 20);
+            this.txtmail.TabIndex = 13;
             // 
             // label3
             // 
@@ -265,27 +265,27 @@
             this.label8.TabIndex = 20;
             this.label8.Text = "Sexo";
             // 
-            // comboBox1
+            // cbsex
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(229, 109);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(58, 21);
-            this.comboBox1.TabIndex = 21;
+            this.cbsex.FormattingEnabled = true;
+            this.cbsex.Location = new System.Drawing.Point(229, 109);
+            this.cbsex.Name = "cbsex";
+            this.cbsex.Size = new System.Drawing.Size(58, 21);
+            this.cbsex.TabIndex = 21;
             // 
-            // textBox5
+            // txtuser
             // 
-            this.textBox5.Location = new System.Drawing.Point(293, 110);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(197, 20);
-            this.textBox5.TabIndex = 22;
+            this.txtuser.Location = new System.Drawing.Point(293, 110);
+            this.txtuser.Name = "txtuser";
+            this.txtuser.Size = new System.Drawing.Size(197, 20);
+            this.txtuser.TabIndex = 22;
             // 
-            // textBox6
+            // txtpass
             // 
-            this.textBox6.Location = new System.Drawing.Point(509, 110);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(197, 20);
-            this.textBox6.TabIndex = 23;
+            this.txtpass.Location = new System.Drawing.Point(509, 110);
+            this.txtpass.Name = "txtpass";
+            this.txtpass.Size = new System.Drawing.Size(197, 20);
+            this.txtpass.TabIndex = 23;
             // 
             // label9
             // 
@@ -309,46 +309,46 @@
             this.label10.TabIndex = 25;
             this.label10.Text = "Clave";
             // 
-            // comboBox2
+            // cbtipouser
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.cbtipouser.FormattingEnabled = true;
+            this.cbtipouser.Items.AddRange(new object[] {
             "Alcalde",
             "Administrador",
             "Funcionario",
             "Jefe Unidad Superior",
             "Jefe Unidad Interna"});
-            this.comboBox2.Location = new System.Drawing.Point(712, 109);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(118, 21);
-            this.comboBox2.TabIndex = 26;
+            this.cbtipouser.Location = new System.Drawing.Point(712, 109);
+            this.cbtipouser.Name = "cbtipouser";
+            this.cbtipouser.Size = new System.Drawing.Size(118, 21);
+            this.cbtipouser.TabIndex = 26;
             // 
-            // comboBox3
+            // cbcargo
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Items.AddRange(new object[] {
+            this.cbcargo.FormattingEnabled = true;
+            this.cbcargo.Items.AddRange(new object[] {
             "Alcalde",
             "Administrador",
             "Funcionario",
             "Jefe Unidad Superior",
             "Jefe Unidad Interna"});
-            this.comboBox3.Location = new System.Drawing.Point(25, 153);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(117, 21);
-            this.comboBox3.TabIndex = 27;
+            this.cbcargo.Location = new System.Drawing.Point(25, 153);
+            this.cbcargo.Name = "cbcargo";
+            this.cbcargo.Size = new System.Drawing.Size(117, 21);
+            this.cbcargo.TabIndex = 27;
             // 
-            // comboBox4
+            // cbdepto
             // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Items.AddRange(new object[] {
+            this.cbdepto.FormattingEnabled = true;
+            this.cbdepto.Items.AddRange(new object[] {
             "Administración",
             "Finanzas",
             "Alcaldia",
             "Transito"});
-            this.comboBox4.Location = new System.Drawing.Point(149, 153);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(117, 21);
-            this.comboBox4.TabIndex = 28;
+            this.cbdepto.Location = new System.Drawing.Point(149, 153);
+            this.cbdepto.Name = "cbdepto";
+            this.cbdepto.Size = new System.Drawing.Size(117, 21);
+            this.cbdepto.TabIndex = 28;
             // 
             // label11
             // 
@@ -403,25 +403,25 @@
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
-            this.Controls.Add(this.comboBox4);
-            this.Controls.Add(this.comboBox3);
-            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.cbdepto);
+            this.Controls.Add(this.cbcargo);
+            this.Controls.Add(this.cbtipouser);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.txtpass);
+            this.Controls.Add(this.txtuser);
+            this.Controls.Add(this.cbsex);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.txtmail);
             this.Controls.Add(this.dtpFecha_Contrato);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtapm);
+            this.Controls.Add(this.txtapp);
+            this.Controls.Add(this.txtnom);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtrut);
             this.Controls.Add(this.panel1);
@@ -451,25 +451,25 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox txtrut;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtnom;
+        private System.Windows.Forms.TextBox txtapp;
+        private System.Windows.Forms.TextBox txtapm;
         private System.Windows.Forms.DateTimePicker dtpFecha_Contrato;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtmail;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.ComboBox cbsex;
+        private System.Windows.Forms.TextBox txtuser;
+        private System.Windows.Forms.TextBox txtpass;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.ComboBox cbtipouser;
+        private System.Windows.Forms.ComboBox cbcargo;
+        private System.Windows.Forms.ComboBox cbdepto;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;

@@ -48,7 +48,43 @@ namespace CapaPresentacion
 
         private void BtnAgregar_Click(object sender, EventArgs e)
         {
-            
+            if (string.IsNullOrWhiteSpace(txtrut.Text))
+            {
+                MessageBox.Show("Debes ingresar a lo menos un Rut");
+            }
+            else
+            {
+                try
+                {
+                    Ora = Conn.AbrirConexion();
+                    cmd = new OracleCommand("SP_InsertarPersonal", Ora);
+                    cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                    cmd.Parameters.Add("rut", OracleType.VarChar).Value = txtrut.Text;
+                    cmd.Parameters.Add("nom", OracleType.VarChar).Value = txtnom.Text;
+                    cmd.Parameters.Add("apelp", OracleType.VarChar).Value = txtapp.Text;
+                    cmd.Parameters.Add("apelm", OracleType.VarChar).Value = txtapm.Text;
+                    cmd.Parameters.Add("contr", OracleType.DateTime).Value = dtpFecha_Contrato.Text;
+                    cmd.Parameters.Add("mail", OracleType.VarChar).Value = txtmail.Text;
+                    cmd.Parameters.Add("sex", OracleType.Char).Value = cbsex.Text;
+                    cmd.Parameters.Add("usu", OracleType.VarChar).Value = txtuser.Text;
+                    cmd.Parameters.Add("pass", OracleType.VarChar).Value = txtpass.Text;
+                    cmd.Parameters.Add("codUser", OracleType.Int32).Value = cbtipouser.Text;
+                    cmd.Parameters.Add("codCargo", OracleType.Int32).Value = cbcargo.Text;
+                    cmd.Parameters.Add("codDepto", OracleType.Int32).Value = cbdepto.Text;
+                    cmd.ExecuteNonQuery();
+                    Conn.CerrarConexion();
+                    MessageBox.Show("Usuario Agregado");
+                    txtrut.Clear();
+                    txtrut.Focus();
+                }
+                catch (Exception)
+                {
+                    //Este catch ocurre cuando algo salio mal en el try.
+                    txtrut.Clear();
+                    txtrut.Focus();
+                    Console.WriteLine("Excepcion ocurrida en Agregar Personal");
+                }
+            }
         }
 
         private void EliminarBtn_Click(object sender, EventArgs e)
@@ -70,7 +106,7 @@ namespace CapaPresentacion
                     txtrut.Clear();
                     txtrut.Focus();
                 }
-                catch
+                catch (Exception)
                 {
                     //Este catch ocurre cuando algo salio mal en el try.
                     //MessageBox.Show("El rut ingresado es erroneo o no pertenece a la base de datos");
