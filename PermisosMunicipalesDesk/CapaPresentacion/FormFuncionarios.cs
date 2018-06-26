@@ -74,9 +74,9 @@ namespace CapaPresentacion
                     cmd.Parameters.Add("sex", OracleType.Char).Value = cbsex.Text;
                     cmd.Parameters.Add("usu", OracleType.VarChar).Value = txtuser.Text;
                     cmd.Parameters.Add("pass", OracleType.VarChar).Value = txtpass.Text;
-                    cmd.Parameters.Add("codUser", OracleType.Number).Value = Convert.ToInt32(cbtipouser.Text);
-                    cmd.Parameters.Add("codCargo", OracleType.Number).Value = Convert.ToInt32(cbcargo.Text);
-                    cmd.Parameters.Add("codDepto", OracleType.Number).Value = Convert.ToInt32(cbdepto.Text);
+                    cmd.Parameters.Add("codUser", OracleType.Number).Value = cbtipouser.SelectedIndex;
+                    cmd.Parameters.Add("codCargo", OracleType.Number).Value = cbcargo.SelectedIndex;
+                    cmd.Parameters.Add("codDepto", OracleType.Number).Value = cbdepto.SelectedIndex;
                     cmd.ExecuteNonQuery();
                     Conn.CerrarConexion();
                     MessageBox.Show("Usuario Agregado");
@@ -89,6 +89,7 @@ namespace CapaPresentacion
                     txtrut.Clear();
                     txtrut.Focus();
                     Console.WriteLine("Excepcion ocurrida en Agregar Personal");
+                    Conn.CerrarConexion();
                 }
             }
         }
