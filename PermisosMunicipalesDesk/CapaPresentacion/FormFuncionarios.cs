@@ -58,12 +58,22 @@ namespace CapaPresentacion
                 MessageBox.Show("Debes ingresar un Rut");
             }else
             {
-                Ora = Conn.AbrirConexion();
-                cmd = new OracleCommand("SP_EliminarPersonal", Ora);
-                cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                cmd.Parameters.Add("id", OracleType.VarChar).Value = txtrut.Text;
-                cmd.ExecuteNonQuery();
-                MessageBox.Show("Usuario Eliminado");
+                try
+                {
+                    Ora = Conn.AbrirConexion();
+                    cmd = new OracleCommand("SP_EliminarPersonal", Ora);
+                    cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                    cmd.Parameters.Add("id", OracleType.VarChar).Value = txtrut.Text;
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Usuario Eliminado");
+                }
+                catch
+                {
+                    MessageBox.Show("El rut ingresado es erroneo o no pertenece a la base de datos");
+                    txtrut.Clear();
+                    txtrut.Focus();
+                    Console.WriteLine("Excepcion ocurrida en Eliminar Personal");
+                }
             }
         }
     }
