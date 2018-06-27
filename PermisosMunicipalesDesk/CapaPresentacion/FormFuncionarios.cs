@@ -111,11 +111,7 @@ namespace CapaPresentacion
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
-            Ora = Conn.AbrirConexion();
-            cmd = new OracleCommand("SP_ListarPersonal", Ora);
-            cmd.CommandType = System.Data.CommandType.StoredProcedure;
-            cmd.Parameters.Add("registros", OracleType.Cursor).Direction = ParameterDirection.Output;
-
+            
 
 
             Ora = Conn.AbrirConexion();

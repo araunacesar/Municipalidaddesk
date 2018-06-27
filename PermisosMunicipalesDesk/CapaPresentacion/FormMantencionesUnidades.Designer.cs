@@ -30,7 +30,7 @@
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.txtRutUnidad = new System.Windows.Forms.TextBox();
+            this.txtidUnidad = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txtNomCargo = new System.Windows.Forms.TextBox();
             this.btnGuardarUnidad = new System.Windows.Forms.Button();
@@ -49,7 +49,7 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(this.txtRutUnidad);
+            this.groupBox1.Controls.Add(this.txtidUnidad);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.groupBox1.Location = new System.Drawing.Point(17, 12);
@@ -57,7 +57,7 @@
             this.groupBox1.Size = new System.Drawing.Size(274, 91);
             this.groupBox1.TabIndex = 25;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Ingresa el rut a buscar";
+            this.groupBox1.Text = "Ingresa el id a buscar";
             // 
             // button1
             // 
@@ -73,13 +73,14 @@
             this.button1.TabIndex = 24;
             this.button1.Text = "Buscar";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // txtRutUnidad
+            // txtidUnidad
             // 
-            this.txtRutUnidad.Location = new System.Drawing.Point(22, 40);
-            this.txtRutUnidad.Name = "txtRutUnidad";
-            this.txtRutUnidad.Size = new System.Drawing.Size(100, 21);
-            this.txtRutUnidad.TabIndex = 20;
+            this.txtidUnidad.Location = new System.Drawing.Point(22, 40);
+            this.txtidUnidad.Name = "txtidUnidad";
+            this.txtidUnidad.Size = new System.Drawing.Size(100, 21);
+            this.txtidUnidad.TabIndex = 20;
             // 
             // groupBox2
             // 
@@ -96,9 +97,10 @@
             // 
             // txtNomCargo
             // 
-            this.txtNomCargo.Location = new System.Drawing.Point(24, 64);
+            this.txtNomCargo.Location = new System.Drawing.Point(24, 29);
+            this.txtNomCargo.Multiline = true;
             this.txtNomCargo.Name = "txtNomCargo";
-            this.txtNomCargo.Size = new System.Drawing.Size(100, 21);
+            this.txtNomCargo.Size = new System.Drawing.Size(100, 95);
             this.txtNomCargo.TabIndex = 24;
             // 
             // btnGuardarUnidad
@@ -161,6 +163,7 @@
             this.btnEliminarUnidad.TabIndex = 26;
             this.btnEliminarUnidad.Text = "Eliminar";
             this.btnEliminarUnidad.UseVisualStyleBackColor = false;
+            this.btnEliminarUnidad.Click += new System.EventHandler(this.btnEliminarUnidad_Click);
             // 
             // btnActualizarUnidad
             // 
@@ -207,7 +210,7 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.TextBox txtRutUnidad;
+        private System.Windows.Forms.TextBox txtidUnidad;
         private System.Windows.Forms.Button btnGuardarUnidad;
         public System.Windows.Forms.DataGridView dgvUnidad;
         private System.Windows.Forms.Button btnEliminarUnidad;

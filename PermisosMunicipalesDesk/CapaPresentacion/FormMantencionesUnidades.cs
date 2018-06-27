@@ -33,7 +33,7 @@ namespace CapaPresentacion
         {
             if (string.IsNullOrWhiteSpace(txtNomCargo.Text))
             {
-                MessageBox.Show("Debes ingresar a lo menos un Rut");
+                MessageBox.Show("Debes ingresar a lo menos una letra");
             }
             else
             {
@@ -46,14 +46,14 @@ namespace CapaPresentacion
                     cmd.ExecuteNonQuery();
                     Conn.CerrarConexion();
                     MessageBox.Show("Unidad Guardada");
-                    txtRutUnidad.Clear();
-                    txtRutUnidad.Focus();
+                    txtidUnidad.Clear();
+                    txtidUnidad.Focus();
                 }
                 catch (Exception)
                 {
                     //Este catch ocurre cuando algo salio mal en el try.
-                    txtRutUnidad.Clear();
-                    txtRutUnidad.Focus();
+                    txtidUnidad.Clear();
+                    txtidUnidad.Focus();
                     Console.WriteLine("Excepcion ocurrida en agregar la unidad del Permisos");
                     Conn.CerrarConexion();
                 }
@@ -61,6 +61,40 @@ namespace CapaPresentacion
             }
         }
 
-        
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //Quizas seria bueno aqui, en vez de buscar por el ID del Tipo de unidad, hacer un SP de SQL con LIKE, cosa que el administrador pueda buscar una lista de todos los que tengan, 
+            //por ejemplo, la palabra "fallecimiento" asi le traera los  que contengan esapalabra, de otra manera, este boton estaria de sobra
+            
+        }
+
+        private void btnEliminarUnidad_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtidUnidad.Text))
+            {
+                MessageBox.Show("Debes ingresar un id de Tipo de Unidad");
+            }
+            else
+            {
+                try
+                {
+                    Ora = Conn.AbrirConexion();
+                    cmd = new OracleCommand("SP_EliminarTipoUnidad", Ora);  // Ver SP Y Crear en caso de ser necesario
+                    cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                    cmd.Parameters.Add("id", OracleType.VarChar).Value = txtidUnidad.Text;
+                    cmd.ExecuteNonQuery();
+                    Conn.CerrarConexion();
+                    MessageBox.Show("Tipo Motivo Eliminado");
+                    txtidUnidad.Clear();
+                    txtidUnidad.Focus();
+                }
+                catch (Exception)
+                {
+                    //Este catch ocurre cuando algo salio mal en el try.
+                    txtidUnidad.Clear();
+                    txtidUnidad.Focus();
+                    Console.WriteLine("Excepcion ocurrida en Eliminar Tipo Motivo");
+                }
+            }
     }
 }

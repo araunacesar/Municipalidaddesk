@@ -29,16 +29,16 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnGuardarTipos = new System.Windows.Forms.Button();
             this.txtTiposPermiso = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.txtRutTipos = new System.Windows.Forms.TextBox();
             this.btnBuscarTipos = new System.Windows.Forms.Button();
+            this.txtIdTipos = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dgvTipos = new System.Windows.Forms.DataGridView();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.btnEliminarTipos = new System.Windows.Forms.Button();
             this.btnActualizarTipos = new System.Windows.Forms.Button();
-            this.btnGuardarTipos = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -59,6 +59,22 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Ingresa un tipo de Permisos";
             // 
+            // btnGuardarTipos
+            // 
+            this.btnGuardarTipos.BackColor = System.Drawing.Color.DimGray;
+            this.btnGuardarTipos.FlatAppearance.BorderSize = 0;
+            this.btnGuardarTipos.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.btnGuardarTipos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGuardarTipos.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardarTipos.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnGuardarTipos.Location = new System.Drawing.Point(147, 64);
+            this.btnGuardarTipos.Name = "btnGuardarTipos";
+            this.btnGuardarTipos.Size = new System.Drawing.Size(114, 27);
+            this.btnGuardarTipos.TabIndex = 26;
+            this.btnGuardarTipos.Text = "Guardar";
+            this.btnGuardarTipos.UseVisualStyleBackColor = false;
+            this.btnGuardarTipos.Click += new System.EventHandler(this.btnGuardarTipos_Click_1);
+            // 
             // txtTiposPermiso
             // 
             this.txtTiposPermiso.Location = new System.Drawing.Point(24, 64);
@@ -69,7 +85,7 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.btnBuscarTipos);
-            this.groupBox2.Controls.Add(this.txtRutTipos);
+            this.groupBox2.Controls.Add(this.txtIdTipos);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.groupBox2.Location = new System.Drawing.Point(17, 12);
@@ -77,14 +93,7 @@
             this.groupBox2.Size = new System.Drawing.Size(274, 91);
             this.groupBox2.TabIndex = 26;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Ingresa el rut a buscar";
-            // 
-            // txtRutTipos
-            // 
-            this.txtRutTipos.Location = new System.Drawing.Point(22, 40);
-            this.txtRutTipos.Name = "txtRutTipos";
-            this.txtRutTipos.Size = new System.Drawing.Size(100, 21);
-            this.txtRutTipos.TabIndex = 20;
+            this.groupBox2.Text = "Ingresa el id a buscar";
             // 
             // btnBuscarTipos
             // 
@@ -101,6 +110,13 @@
             this.btnBuscarTipos.Text = "Buscar";
             this.btnBuscarTipos.UseVisualStyleBackColor = false;
             this.btnBuscarTipos.Click += new System.EventHandler(this.btnBuscarTipos_Click);
+            // 
+            // txtIdTipos
+            // 
+            this.txtIdTipos.Location = new System.Drawing.Point(22, 40);
+            this.txtIdTipos.Name = "txtIdTipos";
+            this.txtIdTipos.Size = new System.Drawing.Size(100, 21);
+            this.txtIdTipos.TabIndex = 20;
             // 
             // groupBox3
             // 
@@ -164,22 +180,6 @@
             this.btnActualizarTipos.UseVisualStyleBackColor = false;
             this.btnActualizarTipos.Click += new System.EventHandler(this.btnActualizarTipos_Click);
             // 
-            // btnGuardarTipos
-            // 
-            this.btnGuardarTipos.BackColor = System.Drawing.Color.DimGray;
-            this.btnGuardarTipos.FlatAppearance.BorderSize = 0;
-            this.btnGuardarTipos.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.btnGuardarTipos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGuardarTipos.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardarTipos.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnGuardarTipos.Location = new System.Drawing.Point(147, 64);
-            this.btnGuardarTipos.Name = "btnGuardarTipos";
-            this.btnGuardarTipos.Size = new System.Drawing.Size(114, 27);
-            this.btnGuardarTipos.TabIndex = 26;
-            this.btnGuardarTipos.Text = "Guardar";
-            this.btnGuardarTipos.UseVisualStyleBackColor = false;
-            this.btnGuardarTipos.Click += new System.EventHandler(this.btnGuardarTipos_Click_1);
-            // 
             // FormMantencionesTipos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -209,7 +209,7 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox txtTiposPermiso;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox txtRutTipos;
+        private System.Windows.Forms.TextBox txtIdTipos;
         private System.Windows.Forms.Button btnBuscarTipos;
         private System.Windows.Forms.GroupBox groupBox3;
         public System.Windows.Forms.DataGridView dgvTipos;

@@ -31,9 +31,9 @@ namespace CapaPresentacion
 
         private void btnGuardarTipos_Click_1(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtRutTipos.Text))
+            if (string.IsNullOrWhiteSpace(txtTiposPermiso.Text))
             {
-                MessageBox.Show("Debes ingresar a lo menos un Rut");
+                MessageBox.Show("Debes ingresar un tipo de permiso");
             }
             else
             {
@@ -46,14 +46,14 @@ namespace CapaPresentacion
                     cmd.ExecuteNonQuery();
                     Conn.CerrarConexion();
                     MessageBox.Show("Tipo de Permiso Guardado");
-                    txtRutTipos.Clear();
-                    txtRutTipos.Focus();
+                    txtTiposPermiso.Clear();
+                    txtTiposPermiso.Focus();
                 }
                 catch (Exception)
                 {
                     //Este catch ocurre cuando algo salio mal en el try.
-                    txtRutTipos.Clear();
-                    txtRutTipos.Focus();
+                    txtTiposPermiso.Clear();
+                    txtTiposPermiso.Focus();
                     Console.WriteLine("Excepcion ocurrida en Agregar Tipo de Permisos");
                     Conn.CerrarConexion();
                 }
@@ -77,7 +77,32 @@ namespace CapaPresentacion
 
         private void btnEliminarTipos_Click(object sender, EventArgs e)
         {
-
+            if (string.IsNullOrWhiteSpace(txtIdTipos.Text))
+            {
+                MessageBox.Show("Debes ingresar un id de Tipo de Motivo");
+            }
+            else
+            {
+                try
+                {
+                    Ora = Conn.AbrirConexion();
+                    cmd = new OracleCommand("SP_EliminarTipoMotivo", Ora);
+                    cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                    cmd.Parameters.Add("id", OracleType.VarChar).Value = txtIdTipos.Text;
+                    cmd.ExecuteNonQuery();
+                    Conn.CerrarConexion();
+                    MessageBox.Show("Tipo Motivo Eliminado");
+                    txtIdTipos.Clear();
+                    txtIdTipos.Focus();
+                }
+                catch (Exception)
+                {
+                    //Este catch ocurre cuando algo salio mal en el try.
+                    txtIdTipos.Clear();
+                    txtIdTipos.Focus();
+                    Console.WriteLine("Excepcion ocurrida en Eliminar Tipo Motivo");
+                }
+            }
         }
     }
 }

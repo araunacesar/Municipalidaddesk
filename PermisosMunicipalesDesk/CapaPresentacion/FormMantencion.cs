@@ -77,7 +77,8 @@ namespace CapaPresentacion
             AbrirSubFormInPanel(MT);
             CDconexion Cont = new CDconexion();
             Ora = Cont.AbrirConexion();
-            OracleCommand cmdt = new OracleCommand("SP_CARGAR_TIPO_PERMISO", Ora); 
+            //OracleCommand cmdt = new OracleCommand("SP_CARGAR_TIPO_PERMISO", Ora); 
+            OracleCommand cmdt = new OracleCommand("SP_ListarTipoPermiso", Ora);
             cmdt.CommandType = System.Data.CommandType.StoredProcedure;
             cmdt.Parameters.Add("registros", OracleType.Cursor).Direction = ParameterDirection.Output;
             OracleDataAdapter odat = new OracleDataAdapter();
