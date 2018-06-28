@@ -97,10 +97,9 @@
             // 
             // txtNomCargo
             // 
-            this.txtNomCargo.Location = new System.Drawing.Point(24, 29);
-            this.txtNomCargo.Multiline = true;
+            this.txtNomCargo.Location = new System.Drawing.Point(24, 64);
             this.txtNomCargo.Name = "txtNomCargo";
-            this.txtNomCargo.Size = new System.Drawing.Size(100, 95);
+            this.txtNomCargo.Size = new System.Drawing.Size(100, 21);
             this.txtNomCargo.TabIndex = 24;
             // 
             // btnGuardarUnidad
