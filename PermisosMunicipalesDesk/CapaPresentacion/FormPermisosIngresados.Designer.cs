@@ -115,6 +115,7 @@
             this.dgvPermisos.Name = "dgvPermisos";
             this.dgvPermisos.Size = new System.Drawing.Size(872, 165);
             this.dgvPermisos.TabIndex = 10;
+            this.dgvPermisos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPermisos_CellContentClick_1);
             // 
             // FormPermisosIngresados
             // 

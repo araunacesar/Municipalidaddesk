@@ -35,7 +35,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.linkpass = new System.Windows.Forms.LinkLabel();
             this.btncerrar = new System.Windows.Forms.PictureBox();
             this.btnminimizar = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -123,19 +122,6 @@
             this.label1.TabIndex = 6;
             this.label1.Text = "Solicitud de Permisos Municipales";
             // 
-            // linkpass
-            // 
-            this.linkpass.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.linkpass.AutoSize = true;
-            this.linkpass.DisabledLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(5)))), ((int)(((byte)(5)))));
-            this.linkpass.LinkColor = System.Drawing.Color.DimGray;
-            this.linkpass.Location = new System.Drawing.Point(438, 285);
-            this.linkpass.Name = "linkpass";
-            this.linkpass.Size = new System.Drawing.Size(155, 13);
-            this.linkpass.TabIndex = 0;
-            this.linkpass.TabStop = true;
-            this.linkpass.Text = "¿ Has olvidado tu contraseña ?";
-            // 
             // btncerrar
             // 
             this.btncerrar.Image = ((System.Drawing.Image)(resources.GetObject("btncerrar.Image")));
@@ -190,7 +176,6 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnminimizar);
             this.Controls.Add(this.btncerrar);
-            this.Controls.Add(this.linkpass);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.txtpass);
@@ -220,7 +205,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.EventHandler label1_Click;
-        private System.Windows.Forms.LinkLabel linkpass;
         private System.Windows.Forms.PictureBox btncerrar;
         private System.Windows.Forms.PictureBox btnminimizar;
         private System.Windows.Forms.Label label2;

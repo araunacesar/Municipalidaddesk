@@ -28,6 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -62,6 +65,8 @@
             this.EliminarBtn = new System.Windows.Forms.Button();
             this.btnActualizar = new System.Windows.Forms.Button();
             this.BtnAgregar = new System.Windows.Forms.Button();
+            this.cbEstado = new System.Windows.Forms.ComboBox();
+            this.label14 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -92,6 +97,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label14);
+            this.groupBox1.Controls.Add(this.cbEstado);
             this.groupBox1.Controls.Add(this.label13);
             this.groupBox1.Controls.Add(this.label12);
             this.groupBox1.Controls.Add(this.label11);
@@ -128,20 +135,20 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Candara", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label13.Location = new System.Drawing.Point(764, 70);
+            this.label13.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.label13.Location = new System.Drawing.Point(588, 68);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(88, 15);
+            this.label13.Size = new System.Drawing.Size(85, 15);
             this.label13.TabIndex = 55;
             this.label13.Text = "Departamento";
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Candara", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label12.Location = new System.Drawing.Point(644, 71);
+            this.label12.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.label12.Location = new System.Drawing.Point(465, 68);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(39, 15);
             this.label12.TabIndex = 54;
@@ -150,11 +157,11 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Candara", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label11.Location = new System.Drawing.Point(517, 70);
+            this.label11.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.label11.Location = new System.Drawing.Point(338, 67);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(93, 15);
+            this.label11.Size = new System.Drawing.Size(94, 15);
             this.label11.TabIndex = 53;
             this.label11.Text = "Tipo de Usuario";
             // 
@@ -166,7 +173,7 @@
             "Finanzas",
             "Alcaldia",
             "Transito"});
-            this.cbdepto.Location = new System.Drawing.Point(767, 88);
+            this.cbdepto.Location = new System.Drawing.Point(591, 86);
             this.cbdepto.Name = "cbdepto";
             this.cbdepto.Size = new System.Drawing.Size(117, 23);
             this.cbdepto.TabIndex = 52;
@@ -180,10 +187,11 @@
             "Funcionario",
             "Jefe Unidad Superior",
             "Jefe Unidad Interna"});
-            this.cbcargo.Location = new System.Drawing.Point(644, 88);
+            this.cbcargo.Location = new System.Drawing.Point(465, 85);
             this.cbcargo.Name = "cbcargo";
             this.cbcargo.Size = new System.Drawing.Size(117, 23);
             this.cbcargo.TabIndex = 51;
+            this.cbcargo.SelectedIndexChanged += new System.EventHandler(this.cbcargo_SelectedIndexChanged);
             // 
             // cbtipouser
             // 
@@ -194,7 +202,7 @@
             "Funcionario",
             "Jefe Unidad Superior",
             "Jefe Unidad Interna"});
-            this.cbtipouser.Location = new System.Drawing.Point(520, 88);
+            this.cbtipouser.Location = new System.Drawing.Point(341, 85);
             this.cbtipouser.Name = "cbtipouser";
             this.cbtipouser.Size = new System.Drawing.Size(118, 23);
             this.cbtipouser.TabIndex = 50;
@@ -202,35 +210,35 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Candara", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label10.Location = new System.Drawing.Point(393, 72);
+            this.label10.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.label10.Location = new System.Drawing.Point(223, 68);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(36, 15);
+            this.label10.Size = new System.Drawing.Size(37, 15);
             this.label10.TabIndex = 49;
             this.label10.Text = "Clave";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Candara", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label9.Location = new System.Drawing.Point(249, 71);
+            this.label9.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.label9.Location = new System.Drawing.Point(79, 67);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(49, 15);
+            this.label9.Size = new System.Drawing.Size(51, 15);
             this.label9.TabIndex = 48;
             this.label9.Text = "Usuario";
             // 
             // txtpass
             // 
-            this.txtpass.Location = new System.Drawing.Point(393, 90);
+            this.txtpass.Location = new System.Drawing.Point(223, 86);
             this.txtpass.Name = "txtpass";
             this.txtpass.Size = new System.Drawing.Size(113, 21);
             this.txtpass.TabIndex = 47;
             // 
             // txtuser
             // 
-            this.txtuser.Location = new System.Drawing.Point(252, 90);
+            this.txtuser.Location = new System.Drawing.Point(82, 86);
             this.txtuser.Name = "txtuser";
             this.txtuser.Size = new System.Drawing.Size(135, 21);
             this.txtuser.TabIndex = 46;
@@ -238,7 +246,10 @@
             // cbsex
             // 
             this.cbsex.FormattingEnabled = true;
-            this.cbsex.Location = new System.Drawing.Point(188, 89);
+            this.cbsex.Items.AddRange(new object[] {
+            "F",
+            "M"});
+            this.cbsex.Location = new System.Drawing.Point(18, 85);
             this.cbsex.Name = "cbsex";
             this.cbsex.Size = new System.Drawing.Size(58, 23);
             this.cbsex.TabIndex = 45;
@@ -246,30 +257,30 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Candara", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label8.Location = new System.Drawing.Point(185, 71);
+            this.label8.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.label8.Location = new System.Drawing.Point(15, 67);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(35, 15);
+            this.label8.Size = new System.Drawing.Size(32, 15);
             this.label8.TabIndex = 44;
             this.label8.Text = "Sexo";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Candara", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label7.Location = new System.Drawing.Point(14, 71);
+            this.label7.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.label7.Location = new System.Drawing.Point(722, 22);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(111, 15);
+            this.label7.Size = new System.Drawing.Size(109, 15);
             this.label7.TabIndex = 43;
             this.label7.Text = "Correo Electronico";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Candara", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label6.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.label6.Location = new System.Drawing.Point(552, 22);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(130, 15);
@@ -279,39 +290,39 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Candara", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label5.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.label5.Location = new System.Drawing.Point(422, 22);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(73, 15);
+            this.label5.Size = new System.Drawing.Size(71, 15);
             this.label5.TabIndex = 41;
             this.label5.Text = "Ap Materno";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Candara", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label4.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.label4.Location = new System.Drawing.Point(293, 22);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(72, 15);
+            this.label4.Size = new System.Drawing.Size(70, 15);
             this.label4.TabIndex = 40;
             this.label4.Text = "Ap. Paterno";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Candara", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label3.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.label3.Location = new System.Drawing.Point(128, 22);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(53, 15);
+            this.label3.Size = new System.Drawing.Size(50, 15);
             this.label3.TabIndex = 39;
             this.label3.Text = "Nombre";
             // 
             // txtmail
             // 
-            this.txtmail.Location = new System.Drawing.Point(17, 90);
+            this.txtmail.Location = new System.Drawing.Point(725, 40);
             this.txtmail.Name = "txtmail";
             this.txtmail.Size = new System.Drawing.Size(164, 21);
             this.txtmail.TabIndex = 38;
@@ -320,8 +331,9 @@
             // 
             this.dtpFecha_Contrato.Location = new System.Drawing.Point(555, 40);
             this.dtpFecha_Contrato.Name = "dtpFecha_Contrato";
-            this.dtpFecha_Contrato.Size = new System.Drawing.Size(214, 21);
+            this.dtpFecha_Contrato.Size = new System.Drawing.Size(164, 21);
             this.dtpFecha_Contrato.TabIndex = 37;
+            this.dtpFecha_Contrato.Value = new System.DateTime(2018, 6, 29, 0, 0, 0, 0);
             // 
             // txtapm
             // 
@@ -347,11 +359,11 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Candara", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label2.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.label2.Location = new System.Drawing.Point(14, 22);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(27, 15);
+            this.label2.Size = new System.Drawing.Size(25, 15);
             this.label2.TabIndex = 33;
             this.label2.Text = "Rut";
             // 
@@ -376,10 +388,36 @@
             // 
             // DGVListarPersonal
             // 
-            this.DGVListarPersonal.BackgroundColor = System.Drawing.SystemColors.WindowFrame;
-            this.DGVListarPersonal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGVListarPersonal.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.DGVListarPersonal.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.DGVListarPersonal.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.DarkSeaGreen;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.GrayText;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.Desktop;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGVListarPersonal.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.DGVListarPersonal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.DGVListarPersonal.EnableHeadersVisualStyles = false;
+            this.DGVListarPersonal.GridColor = System.Drawing.Color.DarkSeaGreen;
             this.DGVListarPersonal.Location = new System.Drawing.Point(15, 34);
             this.DGVListarPersonal.Name = "DGVListarPersonal";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.DarkSeaGreen;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.GrayText;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.Desktop;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGVListarPersonal.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            this.DGVListarPersonal.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.DGVListarPersonal.Size = new System.Drawing.Size(872, 150);
             this.DGVListarPersonal.TabIndex = 33;
             // 
@@ -459,6 +497,28 @@
             this.BtnAgregar.UseVisualStyleBackColor = false;
             this.BtnAgregar.Click += new System.EventHandler(this.BtnAgregar_Click_1);
             // 
+            // cbEstado
+            // 
+            this.cbEstado.FormattingEnabled = true;
+            this.cbEstado.Items.AddRange(new object[] {
+            "1",
+            "0"});
+            this.cbEstado.Location = new System.Drawing.Point(715, 86);
+            this.cbEstado.Name = "cbEstado";
+            this.cbEstado.Size = new System.Drawing.Size(47, 23);
+            this.cbEstado.TabIndex = 56;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.label14.Location = new System.Drawing.Point(714, 68);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(111, 15);
+            this.label14.TabIndex = 57;
+            this.label14.Text = "Estado De Vicengia";
+            // 
             // FormFuncionarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -519,5 +579,7 @@
         private System.Windows.Forms.Button EliminarBtn;
         private System.Windows.Forms.Button btnActualizar;
         private System.Windows.Forms.Button BtnAgregar;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.ComboBox cbEstado;
     }
 }

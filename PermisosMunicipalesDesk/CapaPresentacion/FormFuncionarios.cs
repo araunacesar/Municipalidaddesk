@@ -44,7 +44,7 @@ namespace CapaPresentacion
                 try
                 {
                     Ora = Conn.AbrirConexion();
-                    cmd = new OracleCommand("SP_InsertarPersonal", Ora);
+                    cmd = new OracleCommand("SP_INSERTAR_PERSONAL", Ora);
                     cmd.CommandType = System.Data.CommandType.StoredProcedure;
                     cmd.Parameters.Add("rut", OracleType.VarChar).Value = txtrut.Text;
                     cmd.Parameters.Add("nom", OracleType.VarChar).Value = txtnom.Text;
@@ -58,7 +58,8 @@ namespace CapaPresentacion
                     cmd.Parameters.Add("codUser", OracleType.Number).Value = cbtipouser.SelectedIndex;
                     cmd.Parameters.Add("codCargo", OracleType.Number).Value = cbcargo.SelectedIndex;
                     cmd.Parameters.Add("codDepto", OracleType.Number).Value = cbdepto.SelectedIndex;
-                    //FALTA MAPEAR CAMPO FALTANTE
+                    cmd.Parameters.Add("estadoper_codi_estado", OracleType.Number).Value = cbEstado.SelectedIndex;
+                   
                     cmd.ExecuteNonQuery();
                     cmd = new OracleCommand("SP_ListarPersonal", Ora);
                     cmd.CommandType = System.Data.CommandType.StoredProcedure;
@@ -73,16 +74,6 @@ namespace CapaPresentacion
                     MessageBox.Show("Usuario Agregado");
                     txtrut.Clear();
                     txtrut.Focus();
-                    txtnom.Clear();
-                    txtapp.Clear();
-                    txtapm.Clear();
-                    txtmail.Clear();
-                    txtuser.Clear();
-                    txtpass.Clear();
-                    cbsex.ResetText();
-                    cbtipouser.ResetText();
-                    cbcargo.ResetText();
-                    cbdepto.ResetText();
                 }
                 catch (Exception)
                 {
@@ -107,8 +98,9 @@ namespace CapaPresentacion
                     Ora = Conn.AbrirConexion();
                     cmd = new OracleCommand("SP_EliminarPersonal", Ora);
                     cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                    cmd.Parameters.Add("id", OracleType.VarChar).Value = txtrut.Text;
+                    cmd.Parameters.Add("id", OracleType.Number).Value = Convert.ToInt32(txtrut.Text);
                     cmd.ExecuteNonQuery();
+
                     cmd = new OracleCommand("SP_ListarPersonal", Ora);
                     cmd.CommandType = System.Data.CommandType.StoredProcedure;
                     cmd.Parameters.Add("registros", OracleType.Cursor).Direction = ParameterDirection.Output;
@@ -129,10 +121,9 @@ namespace CapaPresentacion
                     //MessageBox.Show("El rut ingresado es erroneo o no pertenece a la base de datos");
                     txtrut.Clear();
                     txtrut.Focus();
-                    Console.WriteLine("Excepcion ocurrida en Eliminar Personal");
+                    Console.WriteLine("El rut ingresado es erroneo o no pertenece a la base de datos");
                 }
             }
-            Console.WriteLine("Status: " + Conn.CerrarConexion());
         }
 
 
@@ -166,7 +157,7 @@ namespace CapaPresentacion
                         cbtipouser.SelectedIndex = Convert.ToInt32(resultado[9]);
                         cbcargo.SelectedIndex = Convert.ToInt32(resultado[10]);
                         cbdepto.SelectedIndex = Convert.ToInt32(resultado[11]);
-                        //FALTA UN CAMPO PARA MAPEAR SEGUN EL SCRIPT DE DAMIAN
+                        cbEstado.SelectedIndex = Convert.ToInt32(resultado[12]);
                     }
                 }
                 catch (Exception)
@@ -176,6 +167,9 @@ namespace CapaPresentacion
                     Console.WriteLine("Excepcion ocurrida en Buscar Personal");
                 }
             }
+
+
+            Ora = Conn.AbrirConexion();
 
             Console.WriteLine("Status: " + Conn.CerrarConexion());
         }
@@ -206,7 +200,8 @@ namespace CapaPresentacion
                     cmd.Parameters.Add("codUser", OracleType.Number).Value = cbtipouser.SelectedIndex;
                     cmd.Parameters.Add("codCargo", OracleType.Number).Value = cbcargo.SelectedIndex;
                     cmd.Parameters.Add("codDepto", OracleType.Number).Value = cbdepto.SelectedIndex;
-                    //FALTA MAPEAR CAMPO FALTANTE
+                    cmd.Parameters.Add("codEstado", OracleType.Number).Value = cbEstado.SelectedIndex;
+                
                     cmd.ExecuteNonQuery();
                     cmd = new OracleCommand("SP_ListarPersonal", Ora);
                     cmd.CommandType = System.Data.CommandType.StoredProcedure;
@@ -225,11 +220,19 @@ namespace CapaPresentacion
                 {
                     txtrut.Clear();
                     txtrut.Focus();
-                    Console.WriteLine("Excepcion ocurrida en Actualizar Personal");
+                    Console.WriteLine("up!. Ah ocurrido algo al actualizar el funcionario");
                 }
             }
+
+
+            Ora = Conn.AbrirConexion();
             
             Console.WriteLine("Status: " + Conn.CerrarConexion());
+        }
+
+        private void cbcargo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

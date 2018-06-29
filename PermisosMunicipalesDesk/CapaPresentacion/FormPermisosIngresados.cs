@@ -27,5 +27,10 @@ namespace CapaPresentacion
         {
 
         }
+
+        private void dgvPermisos_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

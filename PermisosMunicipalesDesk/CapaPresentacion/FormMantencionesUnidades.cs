@@ -65,7 +65,7 @@ namespace CapaPresentacion
         {
             //Quizas seria bueno aqui, en vez de buscar por el ID del Tipo de unidad, hacer un SP de SQL con LIKE, cosa que el administrador pueda buscar una lista de todos los que tengan, 
             //por ejemplo, la palabra "fallecimiento" asi le traera los  que contengan esapalabra, de otra manera, este boton estaria de sobra
-            
+
         }
 
         private void btnEliminarUnidad_Click(object sender, EventArgs e)
@@ -79,12 +79,12 @@ namespace CapaPresentacion
                 try
                 {
                     Ora = Conn.AbrirConexion();
-                    cmd = new OracleCommand("SP_EliminarTipoUnidad", Ora);  // Ver SP Y Crear en caso de ser necesario
+                    cmd = new OracleCommand("SP_ELIMINAR_TIPO_UNIDAD", Ora);  // listo el procedure
                     cmd.CommandType = System.Data.CommandType.StoredProcedure;
                     cmd.Parameters.Add("id", OracleType.VarChar).Value = txtidUnidad.Text;
                     cmd.ExecuteNonQuery();
                     Conn.CerrarConexion();
-                    MessageBox.Show("Tipo Motivo Eliminado");
+                    MessageBox.Show("La unidad ha sido eliminado");
                     txtidUnidad.Clear();
                     txtidUnidad.Focus();
                 }

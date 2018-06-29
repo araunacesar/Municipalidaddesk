@@ -34,7 +34,7 @@ namespace CapaPresentacion
         {
             if (string.IsNullOrWhiteSpace(txtRutMotivos.Text))
             {
-                MessageBox.Show("Debes ingresar a lo menos un Rut");
+                MessageBox.Show("Debes ingresar a lo menos un Rut"); //esto no deberia de estar o se debe de cambiar
             }
             else
             {
@@ -46,7 +46,7 @@ namespace CapaPresentacion
                     cmd.Parameters.Add("motivo_solicitud", OracleType.VarChar).Value = txtMotivos.Text;
                     cmd.ExecuteNonQuery();
                     Conn.CerrarConexion();
-                    MessageBox.Show("Motivo Guardado");
+                    MessageBox.Show("Se ha agregado un nuevo motivo a la tabla !!");
                     txtRutMotivos.Clear();
                     txtRutMotivos.Focus();
                 }
