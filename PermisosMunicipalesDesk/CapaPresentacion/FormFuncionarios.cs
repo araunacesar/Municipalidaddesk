@@ -73,6 +73,16 @@ namespace CapaPresentacion
                     MessageBox.Show("Usuario Agregado");
                     txtrut.Clear();
                     txtrut.Focus();
+                    txtnom.Clear();
+                    txtapp.Clear();
+                    txtapm.Clear();
+                    txtmail.Clear();
+                    txtuser.Clear();
+                    txtpass.Clear();
+                    cbsex.ResetText();
+                    cbtipouser.ResetText();
+                    cbcargo.ResetText();
+                    cbdepto.ResetText();
                 }
                 catch (Exception)
                 {
@@ -122,6 +132,7 @@ namespace CapaPresentacion
                     Console.WriteLine("Excepcion ocurrida en Eliminar Personal");
                 }
             }
+            Console.WriteLine("Status: " + Conn.CerrarConexion());
         }
 
 
@@ -165,9 +176,6 @@ namespace CapaPresentacion
                     Console.WriteLine("Excepcion ocurrida en Buscar Personal");
                 }
             }
-
-
-            Ora = Conn.AbrirConexion();
 
             Console.WriteLine("Status: " + Conn.CerrarConexion());
         }
@@ -220,9 +228,6 @@ namespace CapaPresentacion
                     Console.WriteLine("Excepcion ocurrida en Actualizar Personal");
                 }
             }
-
-
-            Ora = Conn.AbrirConexion();
             
             Console.WriteLine("Status: " + Conn.CerrarConexion());
         }
