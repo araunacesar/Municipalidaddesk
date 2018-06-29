@@ -32,8 +32,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtVerificarPermisos = new System.Windows.Forms.TextBox();
             this.BtnVerificarPermisos = new System.Windows.Forms.Button();
+            this.txtVerificarPermisos = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgvverificaciones = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
@@ -84,13 +84,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Ingresa el rut a consultar";
             // 
-            // txtVerificarPermisos
-            // 
-            this.txtVerificarPermisos.Location = new System.Drawing.Point(15, 55);
-            this.txtVerificarPermisos.Name = "txtVerificarPermisos";
-            this.txtVerificarPermisos.Size = new System.Drawing.Size(100, 21);
-            this.txtVerificarPermisos.TabIndex = 6;
-            // 
             // BtnVerificarPermisos
             // 
             this.BtnVerificarPermisos.BackColor = System.Drawing.Color.DimGray;
@@ -105,6 +98,13 @@
             this.BtnVerificarPermisos.TabIndex = 7;
             this.BtnVerificarPermisos.Text = "Consultar";
             this.BtnVerificarPermisos.UseVisualStyleBackColor = false;
+            // 
+            // txtVerificarPermisos
+            // 
+            this.txtVerificarPermisos.Location = new System.Drawing.Point(15, 55);
+            this.txtVerificarPermisos.Name = "txtVerificarPermisos";
+            this.txtVerificarPermisos.Size = new System.Drawing.Size(100, 21);
+            this.txtVerificarPermisos.TabIndex = 6;
             // 
             // groupBox2
             // 
@@ -125,6 +125,7 @@
             this.dgvverificaciones.Name = "dgvverificaciones";
             this.dgvverificaciones.Size = new System.Drawing.Size(872, 165);
             this.dgvverificaciones.TabIndex = 7;
+            this.dgvverificaciones.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvverificaciones_CellContentClick);
             // 
             // FormVerificaciones
             // 

@@ -74,6 +74,17 @@ namespace CapaPresentacion
                     MessageBox.Show("Usuario Agregado");
                     txtrut.Clear();
                     txtrut.Focus();
+                    txtapm.Clear();
+                    txtapp.Clear();
+                    txtmail.Clear();
+                    txtnom.Clear();
+                    txtpass.Clear();
+                    txtuser.Clear();
+                    cbcargo.ResetText();
+                    cbdepto.ResetText();
+                    cbEstado.ResetText();
+                    cbsex.ResetText();
+                    cbtipouser.ResetText();
                 }
                 catch (Exception)
                 {
@@ -98,7 +109,7 @@ namespace CapaPresentacion
                     Ora = Conn.AbrirConexion();
                     cmd = new OracleCommand("SP_EliminarPersonal", Ora);
                     cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                    cmd.Parameters.Add("id", OracleType.Number).Value = Convert.ToInt32(txtrut.Text);
+                    cmd.Parameters.Add("rut", OracleType.VarChar).Value = txtrut.Text;
                     cmd.ExecuteNonQuery();
 
                     cmd = new OracleCommand("SP_ListarPersonal", Ora);

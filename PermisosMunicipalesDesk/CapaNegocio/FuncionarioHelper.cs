@@ -16,9 +16,10 @@ namespace CapaNegocio
         //private OracleConnection Ora = new OracleConnection("DATA SOURCE = xe; PASSWORD = gestion; USER ID = gestion_permiso;");
 
 
-        public string[] traerFuncionario(string user) {
-            string queryString = "Select * from PERSONAL where usuario='" + user + "'";
-
+        public string[] traerFuncionario(string rut) {
+            Conn.AbrirConexion();
+            string queryString = "Select * from PERSONAL where rut='" + rut + "';";
+            
             OracleCommand command = new OracleCommand(queryString, Conn.Ora);
             string[] resultado = new string[13];
             OracleDataReader reader;
@@ -28,7 +29,7 @@ namespace CapaNegocio
             {
                 resultado[i] = reader.GetValue(i).ToString();
             }
-
+            Conn.CerrarConexion();
             reader.Close();
 
         return resultado;
