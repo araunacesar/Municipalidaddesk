@@ -52,6 +52,10 @@ namespace CapaPresentacion
                 MessageBox.Show("Usuario o Clave incorrecta");
                 txtuser.Clear();
                 txtpass.Clear();
+                txtpass.Text = "Contraseña";
+                txtpass.PasswordChar = '*';
+                txtuser.Text = "Usuario";
+                
             }
             Console.WriteLine("Estado Conexion: "+Conn.CerrarConexion());
         }

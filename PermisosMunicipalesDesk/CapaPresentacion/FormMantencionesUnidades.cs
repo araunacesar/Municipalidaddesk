@@ -96,5 +96,6 @@ namespace CapaPresentacion
                     Console.WriteLine("Excepcion ocurrida en Eliminar Tipo Motivo");
                 }
             }
+        }
     }
 }
