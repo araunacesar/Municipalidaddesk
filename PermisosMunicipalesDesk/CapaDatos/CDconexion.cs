@@ -23,7 +23,7 @@ namespace CapaDatos
 
         public CDconexion()
         {
-            Ora = new OracleConnection("DATA SOURCE = xe; PASSWORD = gestion; USER ID = gestion_permiso;");
+            Ora = new OracleConnection("DATA SOURCE = deemee.dyndns.org:1521/xe; PASSWORD = gestion; USER ID = gestion_permiso; ");
             cmd = new OracleCommand();
         }
         public OracleConnection AbrirConexion()
