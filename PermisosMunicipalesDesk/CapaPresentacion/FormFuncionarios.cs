@@ -129,7 +129,6 @@ namespace CapaPresentacion
                 catch (Exception)
                 {
                     //Este catch ocurre cuando algo salio mal en el try.
-                    //MessageBox.Show("El rut ingresado es erroneo o no pertenece a la base de datos");
                     txtrut.Clear();
                     txtrut.Focus();
                     Console.WriteLine("El rut ingresado es erroneo o no pertenece a la base de datos");

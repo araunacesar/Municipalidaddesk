@@ -146,7 +146,7 @@ namespace Administrador_Municipalidad
             AbrirFormInPanel(FPI);
             CDconexion Conn = new CDconexion();
             Ora = Conn.AbrirConexion();
-            OracleCommand cmd = new OracleCommand("SP_ListarSoliPermiso", Ora); //crear este procedimiento
+            OracleCommand cmd = new OracleCommand("SP_ListarSoliPermiso", Ora); 
             cmd.CommandType = System.Data.CommandType.StoredProcedure;
             cmd.Parameters.Add("registros", OracleType.Cursor).Direction = ParameterDirection.Output;
             OracleDataAdapter oda = new OracleDataAdapter();
@@ -163,7 +163,7 @@ namespace Administrador_Municipalidad
             AbrirFormInPanel(FV);
             CDconexion Conn = new CDconexion();
             Ora = Conn.AbrirConexion();
-            OracleCommand cmd = new OracleCommand("SP_ListarEstado", Ora); //crear este procedimiento
+            OracleCommand cmd = new OracleCommand("SP_ListarEstado", Ora); 
             cmd.CommandType = System.Data.CommandType.StoredProcedure;
             cmd.Parameters.Add("registros", OracleType.Cursor).Direction = ParameterDirection.Output;
             OracleDataAdapter oda = new OracleDataAdapter();
@@ -181,7 +181,7 @@ namespace Administrador_Municipalidad
             AbrirFormInPanel(FD);
             CDconexion Conn = new CDconexion();
             Ora = Conn.AbrirConexion();
-            OracleCommand cmd = new OracleCommand("SP_ListarEstado", Ora); //crear este procedimiento
+            OracleCommand cmd = new OracleCommand("SP_ListarEstado", Ora); 
             cmd.CommandType = System.Data.CommandType.StoredProcedure;
             cmd.Parameters.Add("registros", OracleType.Cursor).Direction = ParameterDirection.Output;
             OracleDataAdapter oda = new OracleDataAdapter();

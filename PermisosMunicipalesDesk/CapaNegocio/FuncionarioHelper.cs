@@ -13,14 +13,14 @@ namespace CapaNegocio
     {
 
         public CDconexion Conn = new CDconexion();
-        //private OracleConnection Ora = new OracleConnection("DATA SOURCE = xe; PASSWORD = gestion; USER ID = gestion_permiso;");
+        private OracleConnection Ora = new OracleConnection();
 
 
         public string[] traerFuncionario(string rut) {
-            Conn.AbrirConexion();
+            Ora = Conn.AbrirConexion();
             string queryString = "Select * from PERSONAL where rut='" + rut + "';";
             
-            OracleCommand command = new OracleCommand(queryString, Conn.Ora);
+            OracleCommand command = new OracleCommand(queryString, Ora);
             string[] resultado = new string[13];
             OracleDataReader reader;
             reader = command.ExecuteReader();
